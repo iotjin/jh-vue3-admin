@@ -1,0 +1,28 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}  
+body{font: 12px 微软雅黑 !important;background:#fff;-webkit-text-size-adjust:100%;}  
+a{color:#2d374b;text-decoration:none}  
+a:hover{text-decoration:none} 
+em{font-style:normal}  
+li{list-style:none}  
+img{border:0;vertical-align:middle}  
+table{border-collapse:collapse;border-spacing:0}  
+p{word-wrap:break-word}  
+i{font-style: normal;}
+h2,h3,p{padding:0;margin:0;}
+*{box-sizing: border-box;}
+
+/* @font-face{font-family:fontAlibaba1;src: url(font/Alibaba-PuHuiTi-Bold.otf);} */
+
+
+.app-container {
+padding: 20px;
+}
+  
+.tab-line-max-show-css{
+text-overflow: ellipsis;
+white-space: nowrap;
+word-break: keep-all;
+}
+  
+
+

@@ -1,0 +1,19 @@
+@import './sidebar';
+@import './reset';
+@import './dark';
+
+@import './custom/base.scss'; // 自定义
+// @import './custom/global.css'; // 自定义
+
+.app-container {
+  padding: 10px;
+}
+
+.search-container {
+  padding: 18px 0 0 10px;
+  margin-bottom: 10px;
+  background-color: var(--el-bg-color-overlay);
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 4px;
+  box-shadow: var(--el-box-shadow-light);
+}

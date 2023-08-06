@@ -1,0 +1,115 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "editor.rulers": [180], // 150字符处显示垂直标尺
+  // "editor.formatOnSave": true, // 保存时自动格式化
+  // 设置编辑器的默认格式化工具
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 方法括号之间插入空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  // vue文件默认格式化工具：prettier / vetur
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+		// "editor.defaultFormatter": "octref.vetur",
+		"editor.formatOnSave": true
+  },
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+  // --------------------  配置eslint  --------------------
+  // autoFixedOnSave 设置已废弃，采用如下新的设置，新版(>1.41.0)配置
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  // autoFix默认开启，只需输入字符串数组即可
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "javascriptreact",
+    "vue-html"
+  ],
+  // --------------------  配置eslint  --------------------
+	// --------------------  volar 配置  --------------------
+  // 启用实验性的模板插值服务
+  "volar.experimental.templateInterpolationService": true,
+  // 控制标签名称的大小写，默认大驼峰"pascal"，kebab使用短横线连接的小写形式
+  "volar.completion.tagCasing": "pascal",
+  // 在标签自动完成时包含额外的代码片段
+  "volar.completion.useAdditionalTagSnippets": true,
+  "volar.tsPlugin": false,
+  "volar.tsPluginStatus": false,
+	// --------------------  volar 配置  --------------------
+	// --------------------  禁用vetur  --------------------
+  "vetur.enabled": false,
+	"vetur.ignoreProjectWarning": true,
+  // 禁用 Vetur 检查器
+  "vetur.validation.template": false,
+  "vetur.validation.style": false,
+  "vetur.validation.script": false,
+	// --------------------  禁用vetur   --------------------
+	// --------------------  vetur 配置  --------------------
+  // 这个按用户自身习惯选择
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  // 让vue中的js按编辑器自带的ts格式进行格式化
+  // "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 让vue中的js按prettier进行格式化 用这个
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatterOptions": {
+    "js": "prettier",
+    "js-beautify-html": {
+      // "wrap_line_length": 150, // 超过wrap_line_length的部分换行，注释的话一行显示完
+      "wrap_attributes": "aligned-multiple" // 当超出折行长度时，将属性进行垂直对齐
+      // 对属性进行换行。
+      // - auto: 仅在超出行长度时才对属性进行换行。
+      // - force: 对除第一个属性外的其他每个属性进行换行。
+      // - force-aligned: 对除第一个属性外的其他每个属性进行换行，并保持对齐。
+      // - force-expand-multiline: 对每个属性进行换行。
+      // - aligned-multiple: 当超出折行长度时，将属性进行垂直对齐。
+    },
+    "prettyhtml": {
+      "tabWidth": 4, // 会忽略vetur的tabSize配置
+      "printWidth": 150, // 每行150字符
+      "singleQuote": true, // 是否使用单引号
+      "semi": false, // 句尾是否加;
+      "wrapAttributes": false,
+      "sortAttributes": false
+    },
+    // vue中的js生效
+    "prettier": {
+      "printWidth": 150, // 每行150字符
+      "semi": false, // 句尾是否加;
+      "singleQuote": true, // 是否使用单引号
+      "trailingComma": "none" // 禁止随时添加逗号
+    }
+  },
+  // --------------------  vetur 配置  --------------------
+  // --------------------  prettier 配置(以下配置主要针对.js)  --------------------
+  "prettier.useEditorConfig": false, // 不使用editorConfig配置文件设置才生效
+  "prettier.semi": false, // 句尾是否加;
+  "prettier.singleQuote": true, // 是否使用单引号
+  "prettier.trailingComma": "none", // 禁止随时添加逗号
+  // --------------------  prettier 配置  --------------------
+  "liveServer.settings.host": "localhost",
+  "liveServer.settings.port": 8080,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "update.mode": "none",
+   // --------------- 分割线 --------------- 
+}

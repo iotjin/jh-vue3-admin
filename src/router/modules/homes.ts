@@ -1,0 +1,54 @@
+import { AppRouteType } from '@/router/types'
+const Layout = () => import('@/layout/index.vue')
+
+const homesRouter: AppRouteType = {
+  path: '/homes',
+  name: 'homes',
+  component: Layout,
+  redirect: '/homes/home1',
+  meta: {
+    title: 'Home',
+    icon: 'homepage'
+    // roles: ['admin', 'editor']
+  },
+  children: [
+    {
+      path: 'home1',
+      name: 'home1',
+      component: () => import('@/views/demos/homes/home1/index.vue'),
+      meta: { title: 'Home1', icon: 'ep:grid', hidden: false }
+    },
+    {
+      path: 'home2',
+      name: 'home2',
+      component: () => import('@/views/demos/homes/home2.vue'),
+      meta: { title: 'Home2', icon: 'ep:grid', hidden: false }
+    },
+    {
+      path: 'home3',
+      name: 'home3',
+      component: () => import('@/views/demos/homes/home3.vue'),
+      meta: { title: 'Home3', icon: 'ep:grid', hidden: false }
+    }
+  ]
+}
+export default homesRouter
+
+export const homesRouter0: AppRouteType = {
+  path: '/dataCenter',
+  name: 'dataCenter',
+  component: Layout,
+  meta: {
+    title: 'DataCenter',
+    icon: 'homepage'
+    // roles: ['admin', 'editor']
+  },
+  children: [
+    {
+      path: 'dataCenter',
+      name: 'dataCenter',
+      component: () => import('@/views/demos/homes/home1/index.vue'),
+      meta: { title: 'DataCenter', icon: 'line-md:star-pulsating-twotone-loop', hidden: false }
+    }
+  ]
+}
