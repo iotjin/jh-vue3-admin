@@ -7,7 +7,7 @@
       <template v-for="(item, index) in dataCenterList">
         <el-col :span="4" :xs="24" :sm="11" :md="4" style="margin: 5px 0">
           <div :key="item.title" class="item">
-            <el-image class="left" :src="getImagePath(item.icon)" />
+            <el-image class="left" :src="getImgPath(item.icon)" />
             <div class="right">
               <span class="title">{{ item.title }}</span>
               <span :class="'line ' + item.lineColor" />
@@ -84,8 +84,8 @@ const countOutput = dataCenterList.map((item) => {
   return output
 })
 
-const getImagePath = (name: string) => {
-  return new URL('/src/assets/images/static/' + name, import.meta.url).href
+const getImgPath = (name: string) => {
+  return new URL(`/src/assets/images/static/${name}`, import.meta.url).href
 }
 
 onMounted(() => {})

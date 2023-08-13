@@ -39,7 +39,7 @@ export const constantRoutes: AppRouteType[] = [
     meta: { hidden: true }
   },
   {
-    path: '/:pathMatch(.*)*', // 解决路由爆[Vue Router warn]: No match found for location with path
+    path: '/:pathMatch(.*)*', // TODO: 解决路由爆[Vue Router warn]: No match found for location with path
     component: () => import('@/views/error/404.vue'),
     meta: { hidden: true }
   },

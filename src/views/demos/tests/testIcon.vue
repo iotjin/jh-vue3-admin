@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>iconify 图标:</h1>
     <div>
       <icon1 />
       <!-- <icon2 /> -->
@@ -44,11 +45,23 @@
       <!-- <Icon icon="eva:alert-triangle-fill" rotate="90deg" />
       <Icon icon="eva:alert-triangle-fill" rotate="25%" /> -->
     </div>
+
+    <h1>img 本地图片:</h1>
+    <img src="../../../assets/images/static/icon.png" />
+    <img :src="imgPath2" />
+    <img :src="imgPath3" />
+    <img :src="imgPath4" />
+    <img :src="imgPath5" />
+
+    <h2>img 本地图片动态导入:</h2>
+    <img :src="getImgPath2('icon2.png')" />
+    <img :src="getImgPath3('icon3.png')" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { getImgPath } from '@/utils/common'
 
 // element-plus图标
 // https://icon-sets.iconify.design/ep/
@@ -65,8 +78,27 @@ import icon3 from '~icons/line-md/home'
 
 const iconHome4: any = ref(null)
 
+// 不能用require
+// 报错：require is not definedrequire is not defined
+// require是webpack提供的方法，在vite中不适用。在vite中，由于使用了 ES modules 的方式来加载模块，因此不能使用 require，而是使用 import。
+
+// new URL(url, import.meta.url) https://www.vitejs.net/guide/assets.html#new-url-url-import-meta-url
+
+import imgPath2 from '@/assets/images/static/icon2.png'
+const imgPath3 = getImgPath('icon3.png')
+const imgPath4 = new URL(`../../../assets/images/static/icon4.png`, import.meta.url).href
+const imgPath5 = new URL(`@/assets/images/static/icon5.png`, import.meta.url).href
+
+const getImgPath2 = (name: string): any => {
+  return new URL(`/src/assets/images/static/${name}`, import.meta.url).href
+}
+
+const getImgPath3 = (name: string): any => {
+  return new URL(`../../../assets/images/static/${name}`, import.meta.url).href
+}
+
 onMounted(async () => {
-  iconHome4.value = markRaw((await import('~icons/ep/help-filled')).default)
+  iconHome4.value = markRaw((await import('~icons/ep/basketball')).default)
 })
 </script>
 

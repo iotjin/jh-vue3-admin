@@ -18,6 +18,7 @@
     "@wangeditor/editor-for-vue": "5.1.10",
     "axios": "1.4.0",
     "codemirror": "^5.65.13",
+    "dayjs": "1.11.9",
     "echarts": "5.4.3",
     "element-plus": "2.3.9",
     "js-cookie": "3.0.5",

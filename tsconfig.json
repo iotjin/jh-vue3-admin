@@ -20,7 +20,7 @@
     "allowSyntheticDefaultImports": true /* 允许默认导入 */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/types/**/*.d.ts", "mock/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/types/**/*.d.ts", "mock/**/*.ts", "build/**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
