@@ -1,0 +1,1 @@
+import{s as a}from"./index-e33fa83e.js";function o(e){const t=new FormData;return t.append("file",e),a({url:"/api/v1/files",method:"post",data:t,headers:{"Content-Type":"multipart/form-data"}})}function i(e){return a({url:"/api/v1/files",method:"delete",params:{filePath:e}})}export{i as d,o as u};
