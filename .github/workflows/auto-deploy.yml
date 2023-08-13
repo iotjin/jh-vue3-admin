@@ -44,6 +44,10 @@ jobs:
         with:
           node-version: '16.x'
 
+      # 安装 pnpm
+      - name: Install pnpm
+        run: npm install pnpm -g
+
       # 安装依赖  
       - name: Install dependencies
         run: pnpm i
