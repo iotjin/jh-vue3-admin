@@ -47,6 +47,7 @@
 | vue-i18n | Vue 国际化多语言插件                        | [https://vue-i18n.intlify.dev/](https://vue-i18n.intlify.dev/) |
 | VueUse  | 基于Vue组合式API的实用工具集                  | [http://www.vueusejs.com/](http://www.vueusejs.com/) |
 | wangEditor | Typescript 开发的 Web 富文本编辑器        | [https://www.wangeditor.com/](https://www.wangeditor.com/) |
+| UnoCSS  | 一个具有高性能且极具灵活性的即时原子化 CSS 引擎        | [https://unocss.dev/](https://unocss.dev/) |
 
 <br>
 

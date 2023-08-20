@@ -40,6 +40,12 @@ export default {
     'Menu1-3': '菜单1-3',
     Menu2: '菜单2',
     // error
-    Error: '异常页'
+    Error: '异常页',
+    // setting
+    SystemSetting: '系统设置',
+    SystemUser: '用户管理',
+    SystemRole: '角色管理',
+    SystemMenu: '菜单管理',
+    SystemDict: '字典管理'
   }
 }

@@ -17,12 +17,6 @@ declare type EmptyObjectType<T = any> = {
   [key: string]: T
 }
 
-// 申明 select option
-declare type SelectOptionType = {
-  value: string | number
-  label: string | number
-}
-
 /**
  * @description: 接口返回类型
  * @return {*}

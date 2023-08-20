@@ -7,7 +7,8 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-// import UnoCSS from "unocss/vite";
+import UnoCSS from 'unocss/vite'
+import { presetIcons } from 'unocss'
 
 import { viteMockServe } from 'vite-plugin-mock'
 import path from 'path'
@@ -19,7 +20,6 @@ export function createPlugins(env: any, isProduction: boolean) {
 
   return [
     vue(),
-    // UnoCSS({}),
     AutoImport({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
       imports: ['vue', '@vueuse/core'],
@@ -82,6 +82,32 @@ export function createPlugins(env: any, isProduction: boolean) {
         setupProdMockServer();
       `,
       injectFile: resolve('src/main.ts')
+    }),
+
+    // 配置UnoCSS，使其可以直接使用标签 <i-ep-edit /> | <el-button icon="i-ep-edit" > edit </el-button>
+    // UnoCSS({})
+    UnoCSS({
+      presets: [
+        presetIcons({
+          scale: 1.2,
+          warn: true
+        })
+      ],
+      // 以下配置是为了可以直接使用标签 <i-ep-edit /> | <el-button icon="i-ep-edit" > edit </el-button>
+      variants: [
+        {
+          match: (s) => {
+            if (s.startsWith('i-')) {
+              return {
+                matcher: s,
+                selector: (s) => {
+                  return s.startsWith('.') ? `${s.slice(1)},${s}` : s
+                }
+              }
+            }
+          }
+        }
+      ]
     })
   ]
 }

@@ -9,6 +9,7 @@ import testsRouter from './modules/tests'
 import othersRouter from './modules/others'
 import nestedRouter from './modules/nested'
 import errorsRouter from './modules/errors'
+import systemRouter from './modules/system'
 
 import { AppRouteType } from '@/router/types'
 import { gitHub } from '@/utils/const'
@@ -117,8 +118,8 @@ export const asyncRoutes: AppRouteType[] = [
   testsRouter,
   othersRouter,
   nestedRouter,
-  errorsRouter
-  // systemRouter,
+  errorsRouter,
+  systemRouter
 ]
 
 /**

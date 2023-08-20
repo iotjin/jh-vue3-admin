@@ -56,6 +56,12 @@
     <h2>img 本地图片动态导入:</h2>
     <img :src="getImgPath2('icon2.png')" />
     <img :src="getImgPath3('icon3.png')" />
+
+    <h2>el-button+图标:</h2>
+    <el-button type="primary">
+      <el-icon> <i-ep-edit /> </el-icon> 新增
+    </el-button>
+    <el-button type="primary" icon="i-ep-edit"> 新增 </el-button>
   </div>
 </template>
 

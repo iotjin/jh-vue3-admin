@@ -40,6 +40,12 @@ export default {
     'Menu1-3': 'Menu1-3',
     Menu2: 'Menu2',
     // error
-    Error: 'Error'
+    Error: 'Error',
+    // setting
+    SystemSetting: 'System Setting',
+    SystemUser: 'User Manage',
+    SystemRole: 'Role Manage',
+    SystemMenu: 'Menu Manage',
+    SystemDict: 'Dict Manage'
   }
 }

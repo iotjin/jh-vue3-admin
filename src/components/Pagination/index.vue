@@ -62,6 +62,7 @@ const currentPage = useVModel(props, 'page', emit)
 const pageSize = useVModel(props, 'limit', emit)
 
 function handleSizeChange(val: number) {
+  currentPage.value = 1 // TODO: add this line, 切换页面时将currentPage重置为1
   emit('pagination', { page: currentPage, limit: val })
   if (props.autoScroll) {
     scrollTo(0, 800)

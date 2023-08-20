@@ -43,7 +43,7 @@ export interface AppDynamicRouteType extends AppRouteType {
   component: string | Component
   icon: string
   sort: number
-  hidden: false
+  hidden: boolean
   level: number
   children?: AppDynamicRouteType[]
   buttons?: string[]

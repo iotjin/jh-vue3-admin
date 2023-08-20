@@ -1,8 +1,9 @@
 import { useUserStoreHook } from '@/store/modules/user'
 import { Directive, DirectiveBinding } from 'vue'
+import router from '@/router/index'
 
 /**
- * 按钮权限
+ * 按钮权限 eg: v-hasPerm="['user-add','user-edit']"
  */
 export const hasPerm: Directive = {
   mounted(el: HTMLElement, binding: DirectiveBinding) {
@@ -11,12 +12,13 @@ export const hasPerm: Directive = {
     if (roles.includes('admin')) {
       return true
     }
+
     // 「其他角色」按钮权限校验
+    const buttons = router.currentRoute.value.meta.buttons as string[]
     const { value } = binding
     if (value) {
       const requiredPerms = value // DOM绑定需要的按钮权限标识
-
-      const hasPerm = perms?.some((perm) => {
+      const hasPerm = buttons?.some((perm) => {
         return requiredPerms.includes(perm)
       })
 

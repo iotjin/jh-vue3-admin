@@ -143,26 +143,11 @@ $bs_dialog_input_borderColor: #dcdcdc; // 弹框input边框颜色
     width: $bs_dialog_input_width;
   }
 
-  .el-input {
+  .el-form-item__content .el-input {
     width: $bs_dialog_input_width;
-
-    .el-input__inner,
-    .el-textarea__inner {
-      width: $bs_dialog_input_width;
-      background: $bs_dialog_input_bgColor;
-      border-color: $bs_dialog_input_borderColor;
-    }
   }
 
   .el-textarea {
-    width: $bs_dialog_input_width;
-    .el-textarea__inner {
-      background: $bs_dialog_input_bgColor;
-      border-color: $bs_dialog_input_borderColor;
-    }
-  }
-
-  .el-form-item__content .el-input {
     width: $bs_dialog_input_width;
   }
 
@@ -269,6 +254,7 @@ $bs_dialog_input_borderColor: #dcdcdc; // 弹框input边框颜色
   text-overflow: ellipsis;
   white-space: nowrap;
   word-break: keep-all;
+  // overflow: hidden;
 }
 
 .bs-tag {
