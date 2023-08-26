@@ -22,7 +22,7 @@ const asyncRoutes = [
       {
         path: 'user',
         name: 'user',
-        // component: () => import('@/views/system/user'),
+        // component: () => import('@/views/system/user/index.vue'),
         component: 'system/user',
         meta: {
           title: 'User Management',
@@ -37,7 +37,7 @@ const asyncRoutes = [
 ]
 
 // 获取的某用户的所有菜单数据，需要转成实际使用的路由
-const userMenuTreeListData = [
+export const userMenuTreeListData = [
   // {
   //   id: '1',
   //   code: 'https://github.com/iotjin/jh-vue3-admin',
@@ -73,9 +73,9 @@ const userMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/user',
+        component: 'system/user/index',
         // component: () => import('@/views/system/user'),
-        icon: '',
+        icon: 'user',
         sort: 2,
         hidden: false,
         level: 2,
@@ -89,8 +89,8 @@ const userMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/role',
-        icon: '',
+        component: 'system/role/index',
+        icon: 'role',
         sort: 3,
         hidden: false,
         level: 2,
@@ -104,8 +104,8 @@ const userMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/menu',
-        icon: '',
+        component: 'system/menu/index',
+        icon: 'menu',
         sort: 4,
         hidden: false,
         level: 2,
@@ -119,8 +119,8 @@ const userMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/dict',
-        icon: '',
+        component: 'system/dict/index',
+        icon: 'dict',
         sort: 5,
         hidden: false,
         level: 2,
@@ -241,7 +241,7 @@ const testMenuTreeListData = [
     parentTitle: '',
     menuType: 'catalog',
     component: 'Layout',
-    icon: 'example',
+    icon: 'document',
     sort: 2,
     hidden: false,
     level: 1,
@@ -342,7 +342,7 @@ const testMenuTreeListData = [
     parentTitle: '',
     menuType: 'catalog',
     component: 'Layout',
-    icon: 'form',
+    icon: 'edit',
     sort: 3,
     hidden: false,
     level: 1,
@@ -429,8 +429,8 @@ const sysMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/user',
-        icon: '',
+        component: 'system/user/index',
+        icon: 'user',
         sort: 2,
         hidden: false,
         level: 2,
@@ -542,8 +542,8 @@ const sysMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/role',
-        icon: '',
+        component: 'system/role/index',
+        icon: 'role',
         sort: 3,
         hidden: false,
         level: 2,
@@ -627,8 +627,8 @@ const sysMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/menu',
-        icon: '',
+        component: 'system/menu/index',
+        icon: 'menu',
         sort: 4,
         hidden: false,
         level: 2,
@@ -698,8 +698,8 @@ const sysMenuTreeListData = [
         parentId: '22',
         parentTitle: '系统设置',
         menuType: 'menu',
-        component: 'system/dict',
-        icon: '',
+        component: 'system/dict/index',
+        icon: 'dict',
         sort: 5,
         hidden: false,
         level: 2,
@@ -795,10 +795,4 @@ const sysMenuTreeListData = [
 ]
 
 // 菜单管理所有菜单(包含按钮)
-const allMenuTreeListData = sysMenuTreeListData.concat(testMenuTreeListData)
-
-module.exports = {
-  allMenuTreeListData,
-  userMenuTreeListData,
-  asyncRoutes
-}
+export const allMenuTreeListData = sysMenuTreeListData.concat(testMenuTreeListData)

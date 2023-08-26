@@ -2,7 +2,7 @@ import request from '@/utils/request'
 import { ResType } from '@/api/types'
 
 // 查询列表
-export function getRoleList(params: object) {
+export function getRoleList(params: object): ResType<RoleType[]> {
   return request({
     url: '/v1/api/role/list',
     method: 'get',
@@ -12,7 +12,7 @@ export function getRoleList(params: object) {
 
 // 新增、编辑
 // name或code任意一个都不能重复
-export function saveRole(data: object) {
+export function saveRole(data: object): ResType<object> {
   return request({
     url: '/v1/api/role/save',
     method: 'post',
@@ -21,7 +21,7 @@ export function saveRole(data: object) {
 }
 
 // 新增
-export function addRole(data: object) {
+export function addRole(data: object): ResType<object> {
   return request({
     url: '/v1/api/role/save',
     method: 'post',
@@ -32,7 +32,7 @@ export function addRole(data: object) {
 // 删除
 // 1、系统内置角色不能删除
 // 2、已经分配用户的角色不能删除
-export function deleteRole(data: object) {
+export function deleteRole(data: object): ResType<object> {
   return request({
     url: '/v1/api/role/delete',
     method: 'post',
@@ -41,7 +41,7 @@ export function deleteRole(data: object) {
 }
 
 // 编辑
-export function editRole(data: object) {
+export function editRole(data: object): ResType<object> {
   return request({
     url: '/v1/api/role/save',
     method: 'post',
@@ -50,7 +50,7 @@ export function editRole(data: object) {
 }
 
 // 单条查询
-export function getRoleById(params: object) {
+export function getRoleById(params: object): ResType<object> {
   return request({
     url: '/v1/api/role/',
     method: 'get',
@@ -71,7 +71,7 @@ export function getRoleListByUserId(params: object): ResType<RoleType[]> {
 }
 
 // 根据角色设置菜单权限
-export function roleSetPermissions(data: object) {
+export function roleSetPermissions(data: object): ResType<object> {
   return request({
     url: '/v1/api/role/setPermissions',
     method: 'post',

@@ -59,7 +59,7 @@ export function getMenuById(params: object): ResType<object> {
 
 // 根据角色id查询所有菜单(包含按钮)和已有权限的菜单id数组 (角色管理-权限配置使用)
 // roleId
-export function getMenuTreeListByRoleId(params: object): ResType<object> {
+export function getMenuTreeListByRoleId(params: object): ResType<UserMenuTreeListType> {
   return request({
     url: '/v1/api/menus/byRoleId',
     method: 'get',
@@ -93,4 +93,9 @@ export interface MenuType {
   level: number
   children?: MenuType[]
   buttons?: string[]
+}
+
+export interface UserMenuTreeListType {
+  menuTree: MenuType[]
+  menuIds: string[]
 }

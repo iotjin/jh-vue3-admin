@@ -81,7 +81,7 @@ const deptTree = [
   }
 ]
 
-function createDictData(params: any, isMultiple = false) {
+export function createDictData(params: any, isMultiple = false) {
   if (!isMultiple) {
     // 查单个
     const type = params.type
@@ -106,8 +106,4 @@ function createDictData(params: any, isMultiple = false) {
     }
     return {}
   }
-}
-
-module.exports = {
-  createDictData
 }

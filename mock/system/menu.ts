@@ -1,5 +1,5 @@
 import { MockMethod } from 'vite-plugin-mock'
-const { allMenuTreeListData, userMenuTreeListData } = require('./menuList')
+import { allMenuTreeListData, userMenuTreeListData } from './menuList'
 
 export default [
   // 查询所有菜单列表(包含按钮)

@@ -142,12 +142,12 @@ const requestList = (type: string) => {
           state.tableDataY = res.data
         }
       } else {
-        ElMessage.error(res.msg)
+        ElMessage.warning(res.msg)
       }
     })
-    .catch((error) => {
+    .catch((err) => {
       handleLoading(false, type)
-      console.log(JSON.stringify(error))
+      console.log(JSON.stringify(err))
     })
 }
 
@@ -199,12 +199,12 @@ const submitRequest = () => {
         state.isShowDialog = false
         emit('success', {})
       } else {
-        ElMessage.error(res.msg)
+        ElMessage.warning(res.msg)
       }
     })
-    .catch((error) => {
+    .catch((err) => {
       state.dialogSubmitBtnLoading = false
-      console.log(JSON.stringify(error))
+      console.log(JSON.stringify(err))
     })
 }
 </script>

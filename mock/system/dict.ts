@@ -1,6 +1,6 @@
 import { MockMethod } from 'vite-plugin-mock'
-const Mock = require('mockjs')
-const dataManager = require('./dictList')
+import Mock from 'mockjs'
+import { createDictData } from './dictList'
 
 const listData = {
   id: '@id',
@@ -176,7 +176,7 @@ export default [
     method: 'get',
     response: (config: any) => {
       const params = config.query
-      const tempArr = dataManager.createDictData(params, false)
+      const tempArr = createDictData(params, false)
       return {
         code: 20000,
         msg: 'success',
@@ -191,7 +191,7 @@ export default [
     method: 'get',
     response: (config: any) => {
       const params = config.query
-      const tempDict = dataManager.createDictData(params, true)
+      const tempDict = createDictData(params, true)
       return {
         code: 20000,
         msg: 'success',

@@ -148,13 +148,13 @@ const optionState = reactive({
 const { deptOptions, levelOptions } = toRefs(optionState)
 
 const dialogState = reactive({
-  dialogType: 'add',
   isShowDialog: false,
+  dialogType: 'add',
   dialogFormData: {},
   isShowDialogAssignRole: false,
   assignRoleUserData: {}
 })
-const { dialogType, isShowDialog, dialogFormData, isShowDialogAssignRole, assignRoleUserData } = toRefs(dialogState)
+const { isShowDialog, dialogType, dialogFormData, isShowDialogAssignRole, assignRoleUserData } = toRefs(dialogState)
 
 onMounted(() => {
   requestDict()
@@ -167,7 +167,7 @@ const requestDict = () => {
       optionState.deptOptions = res.data.dept
       optionState.levelOptions = res.data.level
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }
@@ -177,14 +177,14 @@ const requestDict2 = () => {
     if (res.code === 20000) {
       optionState.deptOptions = res.data
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
   getDictLevel().then((res) => {
     if (res.code === 20000) {
       optionState.levelOptions = res.data
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }
@@ -203,7 +203,7 @@ const requestList = () => {
         state.tableData = res.data
         state.tableTotal = res.total
       } else {
-        ElMessage.error(res.msg)
+        ElMessage.warning(res.msg)
       }
     })
     .catch((err) => {
@@ -264,12 +264,12 @@ const onClickDelete = (row: UserType) => {
     cancelButtonText: '取消',
     type: 'warning'
   }).then(() => {
-    var params = { ids: [] as string[] | string }
+    var params = { ids: [] as string[] }
     if (row && row.id) {
       params.ids = [row.id]
     } else {
       const tempArr = state.selectedRows.map((item) => item.id)
-      params.ids = tempArr.join(',')
+      params.ids = tempArr
     }
     deleteRequest(params)
   })
@@ -280,7 +280,7 @@ const deleteRequest = (params: object) => {
       ElMessage.success('删除成功!')
       requestList()
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }
@@ -340,7 +340,7 @@ const resetRequest = (params: object) => {
       ElMessage.success('重置密码成功!')
       requestList()
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }

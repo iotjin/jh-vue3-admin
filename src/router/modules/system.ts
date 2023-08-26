@@ -6,7 +6,7 @@ const systemRouter: AppRouteType = {
   path: '/system',
   name: 'system',
   component: Layout,
-  meta: { title: 'SystemSetting', icon: 'el-icon-setting', roles: ['admin'] },
+  meta: { title: 'SystemSetting', icon: 'ep:setting', roles: ['admin'] },
   children: [
     {
       path: 'user',
@@ -17,16 +17,17 @@ const systemRouter: AppRouteType = {
         icon: 'user',
         buttons: ['user-add', 'user-edit', 'user-look', 'user-export', 'user-delete', 'user-assign', 'user-resetPwd']
       }
+    },
+    {
+      path: 'role',
+      name: 'role',
+      component: () => import('@/views/system/role/index.vue'),
+      meta: {
+        title: 'SystemRole',
+        icon: 'role',
+        buttons: ['role-add', 'role-edit', 'role-look', 'role-delete', 'role-setting']
+      }
     }
-    // {
-    //   path: 'role',
-    //   name: 'role',
-    //   component: () => import('@/views/system/role'),
-    //   meta: {
-    //     title: 'SystemRole',
-    //     buttons: ['role-add', 'role-edit', 'role-look', 'role-delete', 'role-setting']
-    //   }
-    // },
     // {
     //   path: 'menu',
     //   name: 'menu',

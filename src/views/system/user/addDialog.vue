@@ -60,7 +60,7 @@
             </el-radio-group>
           </el-form-item>
         </el-form>
-        <div v-if="!dialogIsLook" slot="footer" class="bs-dialog-footer">
+        <div v-if="!dialogIsLook" class="bs-dialog-footer">
           <el-button @click="isShowDialog = false"> 取消 </el-button>
           <el-button :loading="dialogSubmitBtnLoading" type="primary" @click="onDialogSubmit()"> 保存 </el-button>
         </div>
@@ -221,7 +221,7 @@ const requestDictDept = () => {
     if (res.code === 20000) {
       optionState.deptOptions = res.data
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }
@@ -230,7 +230,7 @@ const requestDictLevel = () => {
     if (res.code === 20000) {
       optionState.levelOptions = res.data
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
   })
 }
@@ -274,12 +274,12 @@ const submitRequest = () => {
         state.isShowDialog = false
         emit('success', {})
       } else {
-        ElMessage.error(res.msg)
+        ElMessage.warning(res.msg)
       }
     })
-    .catch((error) => {
+    .catch((err) => {
       state.dialogSubmitBtnLoading = false
-      console.log(JSON.stringify(error))
+      console.log(JSON.stringify(err))
     })
 }
 
@@ -296,11 +296,11 @@ const submitRequest2 = () => {
       state.isShowDialog = false
       emit('success', {})
     } else {
-      ElMessage.error(res.msg)
+      ElMessage.warning(res.msg)
     }
-  }).catch((error) => {
+  }).catch((err) => {
     state.dialogSubmitBtnLoading = false
-    console.log(JSON.stringify(error))
+    console.log(JSON.stringify(err))
   })
 }
 </script>
