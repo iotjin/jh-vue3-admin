@@ -1,1 +1,0 @@
-import{b as o}from"./vue-router-ff164504.js";import{d as a,j as n,o as r,c,a as e,V as u,u as l}from"./@vue-e22e5611.js";const i=e("div",null,"test1和test2使用同一页面",-1),v=a({__name:"test1",setup(m){const t=o(),s=n(()=>t.name);return(p,_)=>(r(),c("div",null,[i,e("div",null,u(l(s)),1)]))}});export{v as default};
