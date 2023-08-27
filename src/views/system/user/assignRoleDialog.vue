@@ -54,7 +54,7 @@
             </el-form>
           </el-col>
         </el-row>
-        <div slot="footer" class="bs-dialog-footer" style="padding-top: 30px">
+        <div class="bs-dialog-footer" style="padding-top: 30px">
           <el-button @click="isShowDialog = false">取消</el-button>
           <el-button :loading="dialogSubmitBtnLoading" type="primary" @click="onDialogSubmit()">保存</el-button>
         </div>

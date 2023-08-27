@@ -50,9 +50,8 @@ const filterAsyncRoutes = (routes: AppRouteType[], roles: string[]) => {
 // 加载路由
 const loadView = (view: string) => {
   // 路由懒加载
-  // return defineAsyncComponent(() => import(`../../views/${view}.vue`))
-  // return modules[`../../views/${view}.vue`]
-  return modules[`@/views/${view}.vue`]
+  // return defineAsyncComponent(() => import(`/src/views/${view}.vue`))
+  return modules[`../../views/${view}.vue`]
 }
 
 /**

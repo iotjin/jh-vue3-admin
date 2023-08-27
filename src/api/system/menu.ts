@@ -2,7 +2,7 @@ import request from '@/utils/request'
 import { ResType } from '@/api/types'
 
 // 查询所有菜单列表(包含按钮)
-export function getAllMenuTreeList(params: object): ResType<object> {
+export function getAllMenuTreeList(params: object): ResType<MenuType[]> {
   return request({
     url: '/v1/api/menu/list',
     method: 'get',

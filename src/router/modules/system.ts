@@ -27,16 +27,17 @@ const systemRouter: AppRouteType = {
         icon: 'role',
         buttons: ['role-add', 'role-edit', 'role-look', 'role-delete', 'role-setting']
       }
+    },
+    {
+      path: 'menu',
+      name: 'menu',
+      component: () => import('@/views/system/menu/index.vue'),
+      meta: {
+        title: 'SystemMenu',
+        icon: 'menu',
+        buttons: ['menu-add', 'menu-edit', 'menu-look', 'menu-delete']
+      }
     }
-    // {
-    //   path: 'menu',
-    //   name: 'menu',
-    //   component: () => import('@/views/system/menu'),
-    //   meta: {
-    //     title: 'SystemMenu',
-    //     buttons: ['menu-add', 'menu-edit', 'menu-look', 'menu-delete']
-    //   }
-    // },
     // {
     //   path: 'dict',
     //   name: 'dict',
