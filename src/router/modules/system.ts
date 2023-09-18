@@ -37,16 +37,17 @@ const systemRouter: AppRouteType = {
         icon: 'menu',
         buttons: ['menu-add', 'menu-edit', 'menu-look', 'menu-delete']
       }
+    },
+    {
+      path: 'dict',
+      name: 'dict',
+      component: () => import('@/views/system/dict/index.vue'),
+      meta: {
+        title: 'SystemDict',
+        icon: 'dict',
+        buttons: ['dict-type-add', 'dict-type-edit', 'dict-type-delete', 'dict-item-add', 'dict-item-edit', 'dict-item-delete']
+      }
     }
-    // {
-    //   path: 'dict',
-    //   name: 'dict',
-    //   component: () => import('@/views/system/dict'),
-    //   meta: {
-    //     title: 'SystemDict',
-    //     buttons: ['dict-type-add', 'dict-type-edit', 'dict-type-delete', 'dict-item-add', 'dict-item-edit', 'dict-item-delete']
-    //   }
-    // }
   ]
 }
 export default systemRouter

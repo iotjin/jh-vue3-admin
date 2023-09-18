@@ -2,7 +2,7 @@ import request from '@/utils/request'
 import { ResType } from '@/api/types'
 
 // 查询字典类型列表
-export function getDictTypeList(params: object) {
+export function getDictTypeList(params: object): ResType<DictTypeType[]> {
   return request({
     url: '/v1/api/dict/type/list',
     method: 'get',
@@ -12,7 +12,7 @@ export function getDictTypeList(params: object) {
 
 // 新增、编辑
 // 检查type重复
-export function saveDictType(data: object) {
+export function saveDictType(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/type/save',
     method: 'post',
@@ -21,7 +21,7 @@ export function saveDictType(data: object) {
 }
 
 // 新增
-export function addDictType(data: object) {
+export function addDictType(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/type/save',
     method: 'post',
@@ -31,7 +31,7 @@ export function addDictType(data: object) {
 
 // 删除
 // 删除一个类型（删除该类型下所有字典项）
-export function deleteDictType(data: object) {
+export function deleteDictType(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/type/delete',
     method: 'post',
@@ -40,7 +40,7 @@ export function deleteDictType(data: object) {
 }
 
 // 编辑
-export function editDictType(data: object) {
+export function editDictType(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/type/save',
     method: 'post',
@@ -49,7 +49,7 @@ export function editDictType(data: object) {
 }
 
 // 单条查询
-export function getDictTypeById(params: object) {
+export function getDictTypeById(params: object): ResType<object> {
   return request({
     url: '/v1/api/dict/type/',
     method: 'get',
@@ -58,7 +58,7 @@ export function getDictTypeById(params: object) {
 }
 
 // 查询字典项列表
-export function getDictItemList(params: object) {
+export function getDictItemList(params: object): ResType<DictItemType[]> {
   return request({
     url: '/v1/api/dict/item/list',
     method: 'get',
@@ -69,7 +69,7 @@ export function getDictItemList(params: object) {
 // 新增、编辑
 // 查询该类型是否已存在(根据type)，已存在该类型才能新增字典项
 // 新增字典项要判断字典项是否存在(根据value)，已存在不能新增
-export function saveDictItem(data: object) {
+export function saveDictItem(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/item/save',
     method: 'post',
@@ -78,7 +78,7 @@ export function saveDictItem(data: object) {
 }
 
 // 新增
-export function addDictItem(data: object) {
+export function addDictItem(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/item/save',
     method: 'post',
@@ -87,7 +87,7 @@ export function addDictItem(data: object) {
 }
 
 // 删除
-export function deleteDictItem(data: object) {
+export function deleteDictItem(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/item/delete',
     method: 'post',
@@ -96,7 +96,7 @@ export function deleteDictItem(data: object) {
 }
 
 // 编辑
-export function editDictItem(data: object) {
+export function editDictItem(data: object): ResType<object> {
   return request({
     url: '/v1/api/dict/item/save',
     method: 'post',
@@ -105,7 +105,7 @@ export function editDictItem(data: object) {
 }
 
 // 单条查询
-export function getDictItemById(params: object) {
+export function getDictItemById(params: object): ResType<object> {
   return request({
     url: '/v1/api/dict/item/',
     method: 'get',
@@ -115,14 +115,6 @@ export function getDictItemById(params: object) {
 
 // 根据字典类型type, 查询字典项列表，查询结果根据sort升序
 // type
-// export function getDictList(params: object): ResType<DictType[]> {
-//   return request({
-//     url: '/v1/api/dict/items/',
-//     method: 'get',
-//     params: params
-//   })
-// }
-
 export function getDictList(params: object): ResType<DictType[]> {
   return request({
     url: '/v1/api/dict/items/',
@@ -142,6 +134,25 @@ export function getMultiDictList(params: object): ResType<MultiDictType> {
 }
 
 // dict type
+
+export interface DictTypeType {
+  id: string
+  builtin: string
+  name: string
+  type: string
+  sort: number
+  notes: string
+}
+
+export interface DictItemType {
+  id: string
+  builtin: string
+  label: string
+  value: string
+  type: string
+  sort: number
+  notes: string
+}
 
 export interface DictType {
   id: string | number
