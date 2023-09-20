@@ -31,7 +31,11 @@
     <el-divider>主题颜色</el-divider>
 
     <ul class="drawer-theme">
-      <li v-for="(color, index) in themeColors" :key="index" class="drawer-theme-item" :style="{ background: color }" @click="changeThemeColor(color)" />
+      <li v-for="(color, index) in themeColors" :key="index" class="drawer-theme-item" :style="{ background: color }" @click="changeThemeColor(color)">
+        <el-icon :size="17" :color="getIconColor(color)" class="check-icon">
+          <i-ep-check />
+        </el-icon>
+      </li>
     </ul>
 
     <el-divider>导航设置</el-divider>
@@ -61,6 +65,7 @@
 
 <script setup lang="ts">
 import { useSettingsStore } from '@/store/modules/settings'
+import { useChangeColor } from '@/utils/theme'
 
 import IconEpSunny from '~icons/ep/sunny'
 import IconEpMoon from '~icons/ep/moon'
@@ -71,6 +76,7 @@ import IconEpMoon from '~icons/ep/moon'
 const settingsStore = useSettingsStore()
 const isDark = useDark()
 const toggleDark = () => useToggle(isDark)
+const { getLightColor, getDarkColor } = useChangeColor()
 
 /**
  * 切换布局
@@ -88,12 +94,26 @@ const themeColors = ref<string[]>(['#409EFF', '#304156', '#11a983', '#13c2c2', '
  */
 function changeThemeColor(color: string) {
   document.documentElement.style.setProperty('--el-color-primary', color)
-  settingsStore.changeSetting({ key: 'layout', value: color })
+  document.documentElement.style.setProperty('--el-color-primary-dark-2', `${getDarkColor(color, 0.1)}`)
+  for (let i = 1; i <= 9; i++) {
+    document.documentElement.style.setProperty(`--el-color-primary-light-${i}`, `${getLightColor(color, i / 10)}`)
+  }
+  settingsStore.changeSetting({ key: 'themeColor', value: color })
 }
 
 onMounted(() => {
+  changeThemeColor(settingsStore.themeColor) // 设置主题颜色
   window.document.body.setAttribute('layout', settingsStore.layout)
 })
+
+const getIconColor = (color: string) => {
+  const themeColor = settingsStore.themeColor
+  if (color === themeColor) {
+    return '#fff'
+  } else {
+    return 'transparent'
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -137,6 +157,13 @@ onMounted(() => {
       height: 30px;
       display: inline-block;
       cursor: pointer;
+
+      .check-icon {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 

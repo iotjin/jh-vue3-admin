@@ -1,25 +1,71 @@
 /// 页面公共样式
 
-// 配置项
+:root {
+  --bPageBgColor: #f5f5f5;
+  --bTextColor: #000;
+  --bBgColor: var(--el-bg-color);
+  --bBorderColor: var(--el-input-border-color);
+  --bDialogBgColor: var(--el-dialog-bg-color);
+
+  // single page use
+  --roleHeaderBgColor: #f1f1f1;
+  --selectRowBgColor: #e8f4ff;
+}
+
+html.dark {
+  --bPageBgColor: #0a0a0a;
+  --bTextColor: #fff;
+  // --el-bg-color-page: #0a0a0a;
+  // --el-bg-color: #141414;
+
+  // single page use
+  --roleHeaderBgColor: #0e0e0e;
+  --selectRowBgColor: #414243;
+}
+
+// 配置项- 浅色/深色模式
 $bs_font_size: 15px;
-$bs_page_bgColor: #f5f5f5;
+// $bs_page_bgColor: #f5f5f5;
+$bs_page_bgColor: var(--bPageBgColor);
 $bs_theme_color: #409eff;
 
-$bs_search_bgColor: #fff; // 表格查询条件背景色
+$bs_search_bgColor: var(--el-bg-color); // 表格查询条件背景色
 $bs_search_icon_color: rgba($bs_theme_color, 0.5); // 表格查询条件icon颜色
 $bs_search_label_width: 110px; // 表格查询条件label宽度
 $bs_search_input_width: 210px; // 表格查询条件input宽度
 
-$bs_table_bgColor: #fff; // 表格背景色
-$bs_table_th_color: #000; // 表格表头文字颜色
-$bs_table_th_bgColor: #efefef; // 表格表头景色
-$bs_table_borderColor: #dfe1e7;
-$bs_table_color: #333333;
+$bs_table_bgColor: var(--el-bg-color); // 表格背景色
+$bs_table_th_color: var(--el-table-header-text-color); // 表格表头文字颜色
+$bs_table_th_bgColor: var(--el-table-header-bg-color); // 表格表头景色
+$bs_table_borderColor: var(--el-table-border-color);
+$bs_table_color: var(--el-table-text-color);
 
 $bs_dialog_input_width: 300px; // 弹框input宽度
 // $bs_dialog_input_bgColor: #f5f5f5; // 弹框input背景色
-$bs_dialog_input_bgColor: #fff; // 弹框input背景色
-$bs_dialog_input_borderColor: #dcdcdc; // 弹框input边框颜色
+$bs_dialog_input_bgColor: var(--el-input-bg-color); // 弹框input背景色
+$bs_dialog_input_borderColor: var(--el-input-border-color); // 弹框input边框颜色
+
+// ----------------------------------------------
+// 配置项 - 浅色模式
+// $bs_font_size: 15px;
+// $bs_page_bgColor: #f5f5f5;
+// $bs_theme_color: #409eff;
+
+// $bs_search_bgColor: #fff; // 表格查询条件背景色
+// $bs_search_icon_color: rgba($bs_theme_color, 0.5); // 表格查询条件icon颜色
+// $bs_search_label_width: 110px; // 表格查询条件label宽度
+// $bs_search_input_width: 210px; // 表格查询条件input宽度
+
+// $bs_table_bgColor: #fff; // 表格背景色
+// $bs_table_th_color: #000; // 表格表头文字颜色
+// $bs_table_th_bgColor: #efefef; // 表格表头景色
+// $bs_table_borderColor: #dfe1e7;
+// $bs_table_color: #333333;
+
+// $bs_dialog_input_width: 300px; // 弹框input宽度
+// // $bs_dialog_input_bgColor: #f5f5f5; // 弹框input背景色
+// $bs_dialog_input_bgColor: #fff; // 弹框input背景色
+// $bs_dialog_input_borderColor: #dcdcdc; // 弹框input边框颜色
 
 // 带搜索的表格页面样式
 .bs-page-body {
@@ -73,6 +119,7 @@ $bs_dialog_input_borderColor: #dcdcdc; // 弹框input边框颜色
       margin-left: 25px;
       width: 80px;
       border-radius: 20px;
+      border: none;
       transition: all 0.3s ease;
       background: linear-gradient(to right, #3bb0f6, #3b94ef);
       cursor: pointer;

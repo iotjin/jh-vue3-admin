@@ -213,13 +213,16 @@ const submitRequest = () => {
 .dialog-body {
   // margin-top: -10px;
   background: white;
+  background: var(--bDialogBgColor);
 }
 
 .role-title {
   padding: 10px;
   text-align: center;
-  color: #000;
-  background: #f1f1f1;
+  // color: #000;
+  // background: #f1f1f1;
+  color: var(--bTextColor);
+  background: var(--roleHeaderBgColor);
 }
 
 .role-search {
@@ -232,7 +235,8 @@ const submitRequest = () => {
 .dialog-body .role-left,
 .dialog-body .role-right {
   padding: 10px;
-  border: 1px solid #f1f1f1;
+  // border: 1px solid #f1f1f1;
+  border: 1px solid var(--roleHeaderBgColor);
 }
 
 .dialog-body .role-center {
@@ -254,6 +258,7 @@ const submitRequest = () => {
   width: 100%;
 }
 .input-width :deep(.el-form-item__content .el-input) {
-  width: 100%;
+  // width: 100%;
+  width: 200px;
 }
 </style>

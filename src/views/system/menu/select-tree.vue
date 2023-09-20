@@ -2,7 +2,7 @@
   <div>
     <el-select ref="selectRef" v-model="selectText" :placeholder="placeholder" :style="'width:' + width" clearable @clear="onClear">
       <el-input v-model="keyword" class="select-input" :placeholder="inputPlaceholder" clearable />
-      <el-option :value="treeProps.value" :label="treeProps.label" style="height: 200px; overflow: auto; background: #fff">
+      <el-option :value="treeProps.value" :label="treeProps.label" class="tree-bg">
         <el-tree ref="treeRef" :node-key="treeProps.value" :data="treeData" highlight-current :filter-node-method="onFilterNode" :props="treeProps" @node-click="onClickNode" />
       </el-option>
     </el-select>
@@ -132,5 +132,12 @@ function setLableValue(label: string, value: string) {
   padding: 0 5px;
   box-sizing: border-box;
   margin-bottom: 5px;
+}
+
+.tree-bg {
+  height: 200px;
+  overflow: auto;
+  background: #fff;
+  background: var(--selectRowBgColor);
 }
 </style>

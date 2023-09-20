@@ -129,3 +129,25 @@ pnpm run build:prod
 - **项目同步仓库更新升级**
 
   项目同步仓库更新升级之后，建议 `pnpm install` 安装更新依赖之后启动
+
+
+## 预览
+
+部分页面效果如下：
+
+<br>
+<br>
+
+![数据中心](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/dataCenter1.jpg)
+
+![数据中心-暗黑模式](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/dataCenter2.jpg)
+
+![搜索](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/search.jpg)
+
+![用户管理](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/user.jpg)
+
+![角色管理](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/role.jpg)
+
+![菜单管理](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/menu.jpg)
+
+![字典管理](https://gitee.com/iotjh/Picture/raw/4466812c4f6931d927b70da591ba5ddfc1b35679/GitHub/Vue3/dict.jpg)

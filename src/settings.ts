@@ -41,6 +41,11 @@ interface DefaultSettings {
   theme: string
 
   /**
+   * 主题色
+   */
+  themeColor: string
+
+  /**
    * 布局大小
    */
   size: string
@@ -66,6 +71,7 @@ const defaultSettings: DefaultSettings = {
    * light: 明亮模式
    */
   theme: 'light',
+  themeColor: '#409EFF',
   size: 'default', // default |large |small
   language: 'zh-cn' // zh-cn| en
 }

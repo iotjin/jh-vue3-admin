@@ -167,7 +167,7 @@ const submitRequest = () => {
 
 <style lang="scss" scoped>
 .tree-body {
-  background: white;
+  // background: white;
   // height: 400px;
   height: 50vh;
   overflow: auto;
@@ -176,5 +176,12 @@ const submitRequest = () => {
 .iconFont {
   font-size: 15px;
   color: #999;
+}
+
+::v-deep .el-tree-node.is-current > .el-tree-node__content {
+  // font-weight: bold;
+  // color: #00ccb8;
+  // background: #f0fcff;
+  background: var(--selectRowBgColor);
 }
 </style>

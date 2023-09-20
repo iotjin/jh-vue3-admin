@@ -234,7 +234,7 @@ const onClosedDialog = () => {
   padding: 15px;
   line-height: 20px;
   border-left: 5px solid #ddd;
-  color: #333;
+  // color: #333;
   font-family: Courier New, serif;
   font-size: 12px;
 }

@@ -200,6 +200,7 @@ const deleteRequest = (params: object) => {
 }
 
 .table-class :deep(.el-table__body tr.current-row > td) {
-  background-color: #e8f4ff !important;
+  // background-color: #e8f4ff !important;
+  background-color: var(--selectRowBgColor) !important;
 }
 </style>
