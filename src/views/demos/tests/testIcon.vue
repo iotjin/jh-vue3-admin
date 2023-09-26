@@ -46,7 +46,7 @@
       <Icon icon="eva:alert-triangle-fill" rotate="25%" /> -->
     </div>
 
-    <h1>img 本地图片:</h1>
+    <h1>img 本地PNG图片:</h1>
     <img src="../../../assets/images/static/icon.png" />
     <img :src="imgPath2" />
     <img :src="imgPath3" />
@@ -56,6 +56,10 @@
     <h2>img 本地图片动态导入:</h2>
     <img :src="getImgPath2('icon2.png')" />
     <img :src="getImgPath3('icon3.png')" />
+
+    <h1>img 本地SVG图片:</h1>
+    <svg-icon icon-class="homepage" />
+    <svg-icon icon-class="user" color="red" />
 
     <h2>el-button+图标:</h2>
     <el-button type="primary">

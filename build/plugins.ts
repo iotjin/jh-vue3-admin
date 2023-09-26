@@ -25,8 +25,8 @@ export function createPlugins(env: any, isProduction: boolean) {
       imports: ['vue', '@vueuse/core'],
       // imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
       eslintrc: {
-        enabled: false,
-        filepath: './.eslintrc-auto-import.json',
+        enabled: false, // 是否自动生成 eslint 规则，建议生成之后设置 false，手动维护
+        filepath: './.eslintrc-auto-import.json', // 指定自动导入函数 eslint 规则的文件路径
         globalsPropValue: true
       },
       resolvers: [
@@ -37,7 +37,7 @@ export function createPlugins(env: any, isProduction: boolean) {
       vueTemplate: true,
       // 配置文件生成位置(false:关闭自动生成)
       dts: false
-      // dts: 'src/types/auto-imports.d.ts'
+      // dts: 'src/types/auto-imports.d.ts' // 指定自动导入函数TS类型声明文件路径
     }),
 
     Components({
