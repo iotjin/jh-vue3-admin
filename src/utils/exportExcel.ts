@@ -14,6 +14,7 @@ export function exportExcel(dataList: any, fields: Array<string>, headers: Array
   if (!Array.isArray(dataList)) return console.warn('dataList is not an array type')
   // if (!Array.isArray(fields)) return console.warn('fields is not an array type')
   // if (!Array.isArray(headers)) return console.warn('headers is not an array type')
+
   data = dataList.map((obj) => {
     return fields.map((field) => {
       return obj[field]
@@ -25,13 +26,13 @@ export function exportExcel(dataList: any, fields: Array<string>, headers: Array
     // 将headers设置为英文字段表头
     data.splice(0, 0, fields)
   }
-  const ws = XLSX.utils.aoa_to_sheet(data)
-  const wb = XLSX.utils.book_new()
+  const ws = XLSX.utils.aoa_to_sheet(data) // 创建工作表
+  const wb = XLSX.utils.book_new() // 创建工作簿
 
   // 隐藏表头
   // let wsrows = [{ hidden: true }]
   // ws['!rows'] = wsrows // ws - worksheet
 
-  XLSX.utils.book_append_sheet(wb, ws, sheetName)
-  XLSX.writeFile(wb, fileName)
+  XLSX.utils.book_append_sheet(wb, ws, sheetName) // 将工作表添加到工作簿中
+  XLSX.writeFile(wb, fileName) // 导出文件
 }

@@ -26,6 +26,7 @@ export default {
     Test1: '测试1',
     Test2: '测试2',
     'Test Icon': '测试 Icon',
+    'Test Time': '测试 Time',
     // other
     Other: '其它',
     Other1: '其它1',

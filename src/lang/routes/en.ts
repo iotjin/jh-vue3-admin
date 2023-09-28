@@ -26,6 +26,7 @@ export default {
     Test1: 'Test1',
     Test2: 'Test2',
     'Test Icon': 'Test Icon',
+    'Test Time': 'Test Time',
     // other
     Other: 'Other',
     Other1: 'Other1',

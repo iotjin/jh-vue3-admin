@@ -30,6 +30,12 @@ const testsRouter: AppRouteType = {
       name: 'testIcon',
       component: () => import('@/views/demos/tests/testIcon.vue'),
       meta: { title: 'Test Icon', icon: 'ep:grid' }
+    },
+    {
+      path: 'testTime',
+      name: 'testTime',
+      component: () => import('@/views/demos/tests/testTime.vue'),
+      meta: { title: 'Test Time', icon: 'ep:grid' }
     }
   ]
 }
