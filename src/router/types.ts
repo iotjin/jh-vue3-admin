@@ -56,7 +56,7 @@ export interface AppDynamicRouteType extends AppRouteType {
 //     title: '系统设置',
 //     parentId: '',
 //     parentTitle: '',
-//     menuType: 'catalog', // catalog | menu | button
+//     menuType: 'catalog', // catalog | menu | button | extlink
 //     component: 'Layout', // "Layout" | "system/menu" (文件路径: src/views/) | ""
 //     // component: Layout,
 //     icon: 'el-icon-setting',

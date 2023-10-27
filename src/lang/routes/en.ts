@@ -4,6 +4,7 @@ export default {
     Dashboard: 'Dashboard',
     DataCenter: 'Data Center',
     Document: 'Document',
+    API: 'API Doc',
     Link: 'Link',
     'External Link': 'External Link',
     Iframe: 'Iframe',

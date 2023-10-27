@@ -1,5 +1,6 @@
 import { AppRouteType } from '@/router/types'
 const Layout = () => import('@/layout/index.vue')
+import { apiDoc } from '@/utils/const'
 
 const homesRouter: AppRouteType = {
   path: '/homes',
@@ -49,6 +50,20 @@ export const homesRouter0: AppRouteType = {
       name: 'dataCenter',
       component: () => import('@/views/demos/homes/home1/index.vue'),
       meta: { title: 'DataCenter', icon: 'line-md:star-pulsating-twotone-loop', hidden: false }
+    }
+  ]
+}
+
+export const apisRouter: AppRouteType = {
+  path: '/api',
+  name: 'api',
+  component: Layout,
+  meta: { title: 'API', icon: 'api' },
+  children: [
+    {
+      path: apiDoc,
+      component: Layout,
+      meta: { title: 'API', icon: 'api' }
     }
   ]
 }

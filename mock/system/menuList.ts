@@ -1,5 +1,7 @@
 // Just a mock data
 
+import { apiDoc } from '@/utils/const'
+
 // 实际路由
 const asyncRoutes = [
   {
@@ -53,12 +55,41 @@ export const userMenuTreeListData = [
   //   children: []
   // },
   {
+    id: '1',
+    code: '/api',
+    title: 'API 文档',
+    parentId: '',
+    parentTitle: '',
+    menuType: 'catalog',
+    component: 'Layout',
+    icon: 'link',
+    sort: 0,
+    hidden: false,
+    level: 1,
+    children: [
+      {
+        id: '1-1',
+        code: apiDoc,
+        title: 'API',
+        parentId: '1',
+        parentTitle: 'API 文档',
+        menuType: 'extlink',
+        component: 'Layout',
+        icon: 'api',
+        sort: 2,
+        hidden: false,
+        level: 2,
+        buttons: []
+      }
+    ]
+  },
+  {
     id: '22',
     code: '/system',
     title: '系统设置',
     parentId: '',
     parentTitle: '',
-    menuType: 'catalog', // catalog | menu | button
+    menuType: 'catalog', // catalog | menu | button | extlink
     component: 'Layout', // "Layout" | "system/menu" (文件路径: src/views/) | ""
     // component: Layout,
     icon: 'ep:setting',

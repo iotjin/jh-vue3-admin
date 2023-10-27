@@ -4,6 +4,7 @@ export default {
     Dashboard: '首页',
     DataCenter: '数据中心',
     Document: '项目文档',
+    API: 'API文档',
     Link: '链接',
     'External Link': '外链',
     Iframe: '内嵌网页',

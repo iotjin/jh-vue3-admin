@@ -1,7 +1,7 @@
 <!-- 内嵌iframe示例 -->
 <template>
   <div>
-    <base-iframe path="https://nodejs.org/zh-cn/" />
+    <base-iframe path="https://nodejs.org/" />
   </div>
 </template>
 
