@@ -36,6 +36,12 @@ const testsRouter: AppRouteType = {
       name: 'testTime',
       component: () => import('@/views/demos/tests/testTime.vue'),
       meta: { title: 'Test Time', icon: 'ep:grid' }
+    },
+    {
+      path: 'testUTCTime',
+      name: 'testUTCTime',
+      component: () => import('@/views/demos/tests/testUTCTime.vue'),
+      meta: { title: 'Test UTC Time', icon: 'ep:grid' }
     }
   ]
 }

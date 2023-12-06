@@ -28,10 +28,12 @@ export default {
     Test2: 'Test2',
     'Test Icon': 'Test Icon',
     'Test Time': 'Test Time',
+    'Test UTC Time': 'Test UTC Time',
     // other
     Other: 'Other',
     Other1: 'Other1',
     Other2: 'Other2',
+    Other3: 'Other3',
     // nested
     Nested: 'Nested',
     Menu1: 'Menu1',

@@ -28,10 +28,12 @@ export default {
     Test2: '测试2',
     'Test Icon': '测试 Icon',
     'Test Time': '测试 Time',
+    'Test UTC Time': '测试 UTC Time',
     // other
     Other: '其它',
     Other1: '其它1',
     Other2: '其它2',
+    Other3: '其它3',
     // nested
     Nested: '多级菜单',
     Menu1: '菜单1',
