@@ -48,6 +48,9 @@ onMounted(() => {
   console.log('utcTimeToYMDHMS', utcTimeToYMDHMS(utcTime))
   console.log('utcTimeToLocal', utcTimeToLocal(utcTime))
   console.log('localTimeToUTCTime', localTimeToUTCTime(currentTime))
+
+  console.log('2023-12-18 06:08:09 本地转UTC: ', JSON.stringify(localTimeToUTCTime('2023-12-18 06:08:09')))
+  console.log('2022-10-10 01:20:36 UTC转本地: ', JSON.stringify(utcTimeToLocal('2022-10-10 01:20:36')))
 })
 </script>
 

@@ -87,6 +87,15 @@ export const utcTimeToLocal = (time: string | number | Date, cFormat: string = '
  * @return {*}  返回值：2019-05-20 00:00:00
  */
 export const localTimeToUTCTime = (time: string | number | Date, cFormat: string = 'YYYY-MM-DD HH:mm:ss'): string => {
-  const formattedTime = moment.utc(time).format(cFormat)
+  const utcTime = new Date(new Date(time)).toISOString()
+  const formattedTime = moment.utc(utcTime).format(cFormat)
+  moment.utc(time).format(cFormat)
+
+  // const localTime = '2023-11-30 19:21:19'
+  // console.log(`utcTime1`, moment(localTime, cFormat).utc().format(cFormat))
+  // console.log(`utcTime2`, moment(localTime).utc().format(cFormat))
+  // // const utcTime = moment.tz(localTime, cFormat, 'Asia/Shanghai').utc().format(cFormat)
+  // const utcTime = new Date(new Date(localTime)).toISOString()
+  // console.log(`utcTime3`, utcTime)
   return formattedTime
 }
