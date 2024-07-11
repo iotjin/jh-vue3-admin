@@ -97,15 +97,15 @@ function handleClickOutside() {
 
 <style lang="scss" scoped>
 .app-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
   &::after {
     display: table;
     clear: both;
     content: '';
   }
-
-  position: relative;
-  width: 100%;
-  height: 100%;
 
   &.mobile.openSidebar {
     position: fixed;

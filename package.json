@@ -60,7 +60,7 @@
     "vite": "^4.4.8",
     "vite-plugin-mock": "2.9.6",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vue-tsc": "^1.6.5 "
+    "vue-tsc": "^1.6.5"
   },
   "engines": {
     "node": ">=16.0.0",

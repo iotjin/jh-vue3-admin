@@ -179,6 +179,7 @@ const onUpgrade = () => {
       border-bottom-left-radius: 100%;
       border-bottom-right-radius: 100%;
     }
+
     .upgrade-title-warp {
       z-index: 1;
       position: relative;
@@ -205,7 +206,7 @@ const onUpgrade = () => {
     padding: 20px;
     line-height: 22px;
     .upgrade-content-desc {
-      color: #c8c9cc;
+      // color: #c8c9cc;
       color: var(--el-color-info-light-5);
       font-size: 12px;
     }

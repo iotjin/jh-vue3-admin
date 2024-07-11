@@ -42,11 +42,11 @@ jobs:
         uses: actions/setup-node@v3
         # 指定某个action 可能需要输入的参数
         with:
-          node-version: '16.x'
+          node-version: '16.18.1'
 
       # 安装 pnpm
       - name: Install pnpm
-        run: npm install pnpm -g
+        run: npm install pnpm@8.6.6 -g
 
       # 安装依赖  
       - name: Install dependencies
