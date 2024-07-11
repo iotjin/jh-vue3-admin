@@ -50,6 +50,7 @@ export default {
     SystemUser: '用户管理',
     SystemRole: '角色管理',
     SystemMenu: '菜单管理',
-    SystemDict: '字典管理'
+    SystemDict: '字典管理',
+    About: '关于'
   }
 }

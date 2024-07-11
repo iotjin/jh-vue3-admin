@@ -34,7 +34,8 @@
   // --------------------  配置eslint  --------------------
   // autoFixedOnSave 设置已废弃，采用如下新的设置，新版(>1.41.0)配置
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
+    //  "source.fixAll": true
   },
   "eslint.format.enable": true,
   // autoFix默认开启，只需输入字符串数组即可

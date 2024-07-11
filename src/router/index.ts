@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 /* Router Modules */
 import homesRouter from './modules/homes'
-import { homesRouter0, apisRouter } from './modules/homes'
+import { homesRouter0, apisRouter, aboutRouter } from './modules/homes'
 import tablesRouter from './modules/tables'
 import componentsRouter from './modules/components'
 import testsRouter from './modules/tests'
@@ -120,7 +120,8 @@ export const asyncRoutes: AppRouteType[] = [
   othersRouter,
   nestedRouter,
   errorsRouter,
-  systemRouter
+  systemRouter,
+  aboutRouter
 ]
 
 /**

@@ -97,5 +97,34 @@ export default [
         data: 'success'
       }
     }
+  },
+  {
+    url: '/v1/api/checkUpgrade',
+    method: 'get',
+    response: () => {
+      return {
+        code: 20000,
+        msg: 'success',
+        data: {
+          isForceUpgrade: false,
+          version: '2.1.0',
+          // descList: []
+          descList: ['1. 新增xxx功能', '2. 优化xxx功能', '3. 修复xxx功能']
+          // descList: [
+          //   '1. 新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能',
+          //   '2. 优化xxx功能优化xxx功能优化xxx功能优化xxx功能优化xxx功能优化xxx功能优化xxx功能优化xxx功能',
+          //   '3. 修复xxx功能',
+          //   '1. 新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能新增xxx功能',
+          //   '2. 优化xxx功能',
+          //   '3. 修复xxx功能',
+          //   '1. 新增xxx功能',
+          //   '2. 优化xxx功能',
+          //   '3. 修复xxx功能',
+          //   '3. 修复xxx功能',
+          //   '1. 新增xxx功能'
+          // ]
+        }
+      }
+    }
   }
 ] as MockMethod[]

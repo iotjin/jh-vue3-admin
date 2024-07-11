@@ -34,7 +34,29 @@ const time5 = TimeUtils.Jh_getPrevYearMonth(ym)
 const time6 = TimeUtils.Jh_getNextYearMonth(ym)
 const time7 = TimeUtils.Jh_getNextYear(Jh_timeStampToTime(timeStamp1, '{y}'))
 
-onMounted(() => {})
+import timerUtils from '@/utils/timerUtils'
+
+onMounted(() => {
+  timerUtils.setInterval(
+    'timer1',
+    () => {
+      console.log('Task 1 executed!')
+    },
+    1000
+  )
+  timerUtils.setInterval(
+    'timer2',
+    () => {
+      console.log('Task 2 executed!')
+    },
+    500
+  )
+})
+
+onBeforeUnmount(() => {
+  // timerUtils.clearInterval('timer2')
+  timerUtils.clearAllIntervals()
+})
 </script>
 
 <style lang="scss" scoped></style>

@@ -50,6 +50,7 @@ export default {
     SystemUser: 'User Manage',
     SystemRole: 'Role Manage',
     SystemMenu: 'Menu Manage',
-    SystemDict: 'Dict Manage'
+    SystemDict: 'Dict Manage',
+    About: 'About'
   }
 }

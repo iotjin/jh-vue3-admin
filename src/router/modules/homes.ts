@@ -67,3 +67,18 @@ export const apisRouter: AppRouteType = {
     }
   ]
 }
+
+export const aboutRouter: AppRouteType = {
+  path: '/about',
+  name: 'about',
+  component: Layout,
+  meta: { title: 'About', icon: 'ep:info-filled' },
+  children: [
+    {
+      path: 'about',
+      name: 'about',
+      component: () => import('@/views/demos/about/index.vue'),
+      meta: { title: 'About', icon: 'ep:info-filled' }
+    }
+  ]
+}

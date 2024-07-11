@@ -1,6 +1,7 @@
 import request from '@/utils/request'
 import { AxiosPromise } from 'axios'
 import { CaptchaResult, LoginData, LoginResult } from './types'
+import { ResType } from '@/api/types'
 
 export function login(data: LoginData): AxiosPromise<LoginResult> {
   return request({
@@ -29,5 +30,13 @@ export function getCaptchaApi(): AxiosPromise<CaptchaResult> {
   return request({
     url: '/v1/api/auth/captcha',
     method: 'get'
+  })
+}
+
+export function getCheckUpgrade(): ResType<object> {
+  return request({
+    url: '/v1/api/checkUpgrade',
+    method: 'get',
+    params: {}
   })
 }

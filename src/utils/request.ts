@@ -38,7 +38,7 @@ service.interceptors.response.use(
     }
 
     // `token` 过期或者账号已在别处登录
-    if (code !== 401 || code === 50008 || code === 50012 || code === 50014) {
+    if (code === 401 || code === 50008 || code === 50012 || code === 50014) {
       ElMessageBox.confirm(t('logout401.message'), t('logout401.title'), {
         confirmButtonText: t('logout401.confirmButtonText'),
         type: 'warning'
