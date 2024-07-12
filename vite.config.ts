@@ -36,8 +36,6 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       }
     },
     server: {
-      // 是否开启 https
-      https: false,
       host: '0.0.0.0',
       port: Number(VITE_APP_PORT),
       open: true, // 运行是否自动打开浏览器

@@ -140,6 +140,7 @@ const onUpgrade = () => {
 
 <style lang="scss">
 .upgrade-dialog {
+  padding: 0px;
   .el-dialog__header {
     padding: 0px;
     margin-right: 0px;

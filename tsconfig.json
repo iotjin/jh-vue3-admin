@@ -6,14 +6,17 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
+    "importHelpers": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
+    "outDir": "./dist",
     "allowJs": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@build/*": ["build/*"]
     },
     "types": ["vite/client", "unplugin-icons/types/vue"],
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
@@ -21,6 +24,36 @@
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "src/types/**/*.d.ts", "mock/**/*.ts", "build/**/*.ts"],
-  "exclude": ["node_modules", "dist", "**/*.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }
+
+
+
+
+// {
+//   "compilerOptions": {
+//     "target": "esnext",
+//     "useDefineForClassFields": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "strict": true,
+//     "jsx": "preserve",
+//     "sourceMap": true,
+//     "resolveJsonModule": true,
+//     "esModuleInterop": true,
+//     "lib": ["esnext", "dom"],
+//     "baseUrl": ".",
+//     "allowJs": true,
+//     "paths": {
+//       "@/*": ["src/*"],
+//       "@build/*": ["build/*"]
+//     },
+//     "types": ["vite/client", "unplugin-icons/types/vue"],
+//     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+//     "allowSyntheticDefaultImports": true /* 允许默认导入 */,
+//     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */
+//   },
+//   "include": ["src/**/*.ts", "src/**/*.vue", "src/types/**/*.d.ts", "mock/**/*.ts", "build/**/*.ts"],
+//   "exclude": ["node_modules", "dist", "**/*.js"]
+// }
+

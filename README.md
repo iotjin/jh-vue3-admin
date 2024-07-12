@@ -71,6 +71,7 @@
    
 ```
 * v1.0.0版本，基于vue-admin-template模板项目升级到Vue3
+* v1.1.0版本，依赖库更新支持node20+
 ```
 </details>
 
@@ -81,7 +82,7 @@
 | 环境                 | 名称版本                                                     | 备注                                                         |
 | -------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | **开发工具**         | VSCode                                                       | [下载地址](https://code.visualstudio.com/Download)           |
-| **运行环境**         | Node 16+                                                     | [下载地址](http://nodejs.cn/download)                        |
+| **运行环境**         | Node 20+  pnpm 9.x                                           | [下载地址](http://nodejs.cn/download)                        |
 | **VSCode插件(必装)** | 1. `Vue Language Features (Volar) ` <br/> 2. `TypeScript Vue Plugin (Volar) `  <br/>3. 禁用 Vetur | ![vscode-plugin](https://gitee.com/iotjh/Picture/raw/master/GitHub/Vue3/volar.png) |
 
 

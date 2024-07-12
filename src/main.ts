@@ -14,8 +14,8 @@ import i18n from '@/lang/index'
 
 // 样式
 import 'element-plus/theme-chalk/dark/css-vars.css'
+import 'uno.css' // 放在自定义样式前,防止覆盖自定义样式
 import '@/styles/index.scss'
-import 'uno.css'
 
 const app = createApp(App)
 // 全局注册 自定义指令(directive)

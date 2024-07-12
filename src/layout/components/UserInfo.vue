@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="app-container">
     <!-- 用户信息 -->
     <el-dropdown trigger="click">
       <div class="avatar-container">
@@ -71,7 +71,7 @@ function logout() {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.app-container {
   display: flex;
 }
 .avatar-container {

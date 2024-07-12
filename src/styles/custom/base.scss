@@ -110,6 +110,10 @@ $bs_dialog_input_borderColor: var(--el-input-border-color); // 弹框input边框
       width: $bs_search_input_width;
     }
 
+    .el-select {
+      width: $bs_search_input_width;
+    }
+
     // 时间范围选择器
     .el-range-editor--small .el-range-input {
       background: $bs_dialog_input_bgColor;
@@ -191,6 +195,10 @@ $bs_dialog_input_borderColor: var(--el-input-border-color); // 弹框input边框
   }
 
   .el-form-item__content .el-input {
+    width: $bs_dialog_input_width;
+  }
+
+  .el-form-item__content .el-select {
     width: $bs_dialog_input_width;
   }
 

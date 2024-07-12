@@ -15,8 +15,8 @@
           </el-form-item>
           <el-form-item v-if="dialogType !== 'add'" label="是否内置:" prop="builtin">
             <el-radio-group v-model="dialogFormData.builtin">
-              <el-radio label="1" disabled>是</el-radio>
-              <el-radio label="0" disabled>否</el-radio>
+              <el-radio value="1" disabled>是</el-radio>
+              <el-radio value="0" disabled>否</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item label="备注:" prop="notes">

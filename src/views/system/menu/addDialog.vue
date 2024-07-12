@@ -40,8 +40,8 @@
           </el-form-item>
           <el-form-item v-if="dialogFormData.menuType !== 'button'" label="状态:" prop="hidden">
             <el-radio-group v-model="dialogFormData.hidden">
-              <el-radio :label="true">隐藏</el-radio>
-              <el-radio :label="false">显示</el-radio>
+              <el-radio :value="true">隐藏</el-radio>
+              <el-radio :value="false">显示</el-radio>
             </el-radio-group>
           </el-form-item>
         </el-form>
