@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
 import { setupStore } from '@/store'
+import { setupComponent } from '@/views/components'
 import { setupDirective } from '@/directive'
 
 import '@/permission'
@@ -18,6 +19,8 @@ import 'uno.css' // 放在自定义样式前,防止覆盖自定义样式
 import '@/styles/index.scss'
 
 const app = createApp(App)
+// 全局注册 组件
+setupComponent(app)
 // 全局注册 自定义指令(directive)
 setupDirective(app)
 // 全局注册 状态管理(store)

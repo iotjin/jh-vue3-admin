@@ -7,6 +7,13 @@
     <div class="dashboard-text">
       roles: <span v-for="role in userStore.roles" :key="role">{{ role }}</span>
     </div>
+
+    <div style="margin-top: 50px">
+      <el-link href="https://iotjin.github.io/jh-vue-admin" target="_blank"> <el-tag type="primary" size="large">vue2版本在线预览</el-tag> </el-link>
+    </div>
+    <div style="margin-top: 50px">
+      <el-link href="https://iotjin.github.io/jh-vue3-admin" target="_blank"> <el-tag type="primary" size="large">vue3版本在线预览</el-tag> </el-link>
+    </div>
   </div>
 </template>
 

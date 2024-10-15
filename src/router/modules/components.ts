@@ -9,6 +9,24 @@ const componentsRouter: AppRouteType = {
   meta: { title: 'Component', icon: 'menu', roles: ['admin'] },
   children: [
     {
+      path: 'dialog',
+      name: 'dialog',
+      component: () => import('@/views/demos/components/dialog.vue'),
+      meta: { title: 'Base Dialog', icon: 'ep:star-filled' }
+    },
+    {
+      path: 'copy',
+      component: () => import('@/views/demos/components/copy.vue'),
+      name: 'copy',
+      meta: { title: 'copy directive', icon: 'ep:star-filled' }
+    },
+    {
+      path: 'debounce',
+      component: () => import('@/views/demos/components/debounce.vue'),
+      name: 'debounce',
+      meta: { title: 'debounce directive', icon: 'ep:star-filled' }
+    },
+    {
       path: 'iconSelector',
       name: 'iconSelector',
       component: () => import('@/views/demos/components/iconSelector.vue'),
