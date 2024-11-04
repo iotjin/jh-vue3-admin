@@ -84,8 +84,4 @@ const requestList = () => {
 }
 </script>
 
-<style lang="scss" scoped>
-::v-deep .el-input__icon:after {
-  height: auto;
-}
-</style>
+<style lang="scss" scoped></style>

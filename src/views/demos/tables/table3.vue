@@ -153,17 +153,48 @@ const expandChange = (row: TableType, rows: TableType[]) => {
 </script>
 
 <style lang="scss" scoped>
+// .app-container {
+//   ::v-deep {
+//     .el-table th {
+//       background: #ddeeff;
+//     }
+//     .el-table__expanded-cell {
+//       border-bottom: 0px;
+//       border-right: 0px;
+//       padding: 0px 0px 0px 47px;
+//     }
+//   }
+//   .table-in-table {
+//     border-top: 0px;
+//   }
+// }
+
+// .app-container {
+//   :deep {
+//     .el-table th {
+//       background: #ddeeff;
+//     }
+//     .el-table__expanded-cell {
+//       border-bottom: 0px;
+//       border-right: 0px;
+//       padding: 0px 0px 0px 47px;
+//     }
+//   }
+//   .table-in-table {
+//     border-top: 0px;
+//   }
+// }
+
 .app-container {
-  ::v-deep {
-    .el-table th {
-      background: #ddeeff;
-    }
-    .el-table__expanded-cell {
-      border-bottom: 0px;
-      border-right: 0px;
-      padding: 0px 0px 0px 47px;
-    }
+  :deep(.el-table th) {
+    background: #ddeeff;
   }
+  :deep(.el-table__expanded-cell) {
+    border-bottom: 0px;
+    border-right: 0px;
+    padding: 0px 0px 0px 47px;
+  }
+
   .table-in-table {
     border-top: 0px;
   }

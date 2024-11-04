@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { type DraggableEvent, type UseDraggableReturn, VueDraggable } from 'vue-draggable-plus'
+import { type SortableEvent, type UseDraggableReturn, VueDraggable } from 'vue-draggable-plus'
 import { useDraggable } from 'vue-draggable-plus'
 
 const dragRef = ref<UseDraggableReturn>()
@@ -124,11 +124,11 @@ const draggable = useDraggable('tbody', tableData2, {
   }
 })
 
-const onStart = (e: DraggableEvent) => {
+const onStart = (e: SortableEvent) => {
   console.log('start', e)
 }
 
-const onEnd = (e: DraggableEvent) => {
+const onEnd = (e: SortableEvent) => {
   console.log('onEnd', e)
   const { newIndex, oldIndex }: any = e
   console.log('拖动了行，当前序号：' + newIndex)

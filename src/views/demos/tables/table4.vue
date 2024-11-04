@@ -163,16 +163,40 @@ const expandChange = (row: TableType, rows: TableType[]) => {
 </script>
 
 <style lang="scss" scoped>
-::v-deep {
-  .row-expand-unhas .el-table__expand-column {
-    pointer-events: none;
-  }
-  .row-expand-unhas .el-table__expand-column .el-icon {
-    visibility: hidden;
-  }
+// ::v-deep {
+//   .row-expand-unhas .el-table__expand-column {
+//     pointer-events: none;
+//   }
+//   .row-expand-unhas .el-table__expand-column .el-icon {
+//     visibility: hidden;
+//   }
 
-  .el-table__expanded-cell {
-    padding: 20px 50px;
-  }
+//   .el-table__expanded-cell {
+//     padding: 20px 50px;
+//   }
+// }
+
+// :deep {
+//   .row-expand-unhas .el-table__expand-column {
+//     pointer-events: none;
+//   }
+//   .row-expand-unhas .el-table__expand-column .el-icon {
+//     visibility: hidden;
+//   }
+
+//   .el-table__expanded-cell {
+//     padding: 20px 50px;
+//   }
+// }
+
+:deep(.row-expand-unhas .el-table__expand-column) {
+  pointer-events: none;
+}
+:deep(.row-expand-unhas .el-table__expand-column .el-icon) {
+  visibility: hidden;
+}
+
+:deep(.el-table__expanded-cell) {
+  padding: 20px 50px;
 }
 </style>

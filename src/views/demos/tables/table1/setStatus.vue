@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import { getDictStatus } from '@/api/base/base'
-import { type DraggableEvent, type UseDraggableReturn, VueDraggable } from 'vue-draggable-plus'
+import { type UseDraggableReturn, VueDraggable } from 'vue-draggable-plus'
 
 const emit = defineEmits(['change'])
 
@@ -154,11 +154,11 @@ const handleChange = (value: number[] | string[], direction: 'left' | 'right', m
   onChange()
 }
 
-const onStart = (e: DraggableEvent) => {
+const onStart = (e: any) => {
   console.log('start', e)
 }
 
-const onEnd = (e: DraggableEvent) => {
+const onEnd = (e: any) => {
   console.log('onEnd', e)
   for (let i = 0; i < state.selectStatusList.length; i++) {
     var item = state.selectStatusList[i]

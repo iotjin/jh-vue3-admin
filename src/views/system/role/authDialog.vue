@@ -178,7 +178,18 @@ const submitRequest = () => {
   color: #999;
 }
 
-::v-deep .el-tree-node.is-current > .el-tree-node__content {
+// ::v-deep .el-tree-node.is-current > .el-tree-node__content {
+//   // font-weight: bold;
+//   // color: #00ccb8;
+//   // background: #f0fcff;
+//   background: var(--selectRowBgColor);
+// }
+
+// :deep(.el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content) {
+//   background: var(--selectRowBgColor);
+// }
+
+:deep(.el-tree-node.is-current > .el-tree-node__content) {
   // font-weight: bold;
   // color: #00ccb8;
   // background: #f0fcff;
