@@ -1,1 +1,0 @@
-import{u as a,b as n}from"./vue-router-CP6FQFzT.js";import{d as c,o as p,c as u}from"./@vue-ROmf2CMa.js";const l=c({__name:"index",setup(m){const e=a(),t=n(),{params:o,query:r}=e,{path:s}=o;return t.replace({path:"/"+s,query:r}),(_,i)=>(p(),u("div"))}});export{l as default};

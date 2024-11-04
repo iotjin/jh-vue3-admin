@@ -1,0 +1,1 @@
+import{u as t,w}from"./xlsx-DjuO7_Ju.js";function x(r,a,n=[],s="Excel.xlsx",i="Sheet"){let e=new Array;if(!Array.isArray(r))return console.warn("dataList is not an array type");e=r.map(p=>a.map(c=>p[c])),n.length>0?e.splice(0,0,n):e.splice(0,0,a);const l=t.aoa_to_sheet(e),o=t.book_new();t.book_append_sheet(o,l,i),w(o,s)}export{x as e};
