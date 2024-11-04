@@ -4,6 +4,10 @@ export function getDictDept() {
   return getDictList({ type: 'dept' })
 }
 
+export function getDictStatus() {
+  return getDictList({ type: 'status' })
+}
+
 export function getDictDeptTree() {
   return getDictList({ type: 'deptTree' })
 }

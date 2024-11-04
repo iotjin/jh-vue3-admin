@@ -27,8 +27,14 @@ const listData = {
   name: '@cname',
   name1: '@cname',
   'content|1-18': '这是内容',
+  'notes|1-18': '这是内容',
   createDate: '@datetime("yyyy-MM-dd HH:mm:ss")',
   updateDate: '@datetime("yyyy-MM-dd HH:mm:ss")',
+  userNumber: '@integer(10000000,99999999)',
+  'deptId|1': ['dept1', 'dept2', 'dept3'],
+  userExpiryDate: '@datetime("yyyy-MM-dd")',
+  loginDate: '@datetime("yyyy-MM-dd HH:mm:ss")',
+  loginIp: '@ip',
   phone: /^1[387][0-9]{9}$/,
   updateBy: '@cname',
   money: '@float(0, 1000, 1, 2)',
@@ -105,7 +111,7 @@ const mock: Array<MockMethod> = [
 
   // 单条查询
   {
-    url: '/v1/api/table/',
+    url: '/v1/api/table/:id',
     method: 'get',
     response: (config: any) => {
       const params = config.query

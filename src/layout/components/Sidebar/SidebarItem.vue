@@ -3,22 +3,26 @@
     <!-- 只包含一个子路由节点的路由，显示其【唯一子路由】 -->
     <template v-if="hasOneShowingChild(item.children, item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren)">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-        <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'menu-item-custom': isCollapse }">
-          <Icon v-if="isIconify(onlyOneChild.meta)" :icon="onlyOneChild.meta.icon" class="svg-icon" />
-          <svg-icon v-if="isSVGIcon(onlyOneChild.meta)" :icon-class="onlyOneChild.meta.icon" />
-          <template #title>
-            {{ translateRouteTitleI18n(onlyOneChild.meta.title) }}
-          </template>
-        </el-menu-item>
+        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="onlyOneChild.meta.title" placement="right" :offset="12" :enterable="true">
+          <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'menu-item-custom': isCollapse }">
+            <Icon v-if="isIconify(onlyOneChild.meta)" :icon="onlyOneChild.meta.icon" class="svg-icon" />
+            <svg-icon v-if="isSVGIcon(onlyOneChild.meta)" :icon-class="onlyOneChild.meta.icon" />
+            <template #title>
+              <span class="sle" @mouseenter="handleMouse($event)">{{ translateRouteTitleI18n(onlyOneChild.meta.title) }}</span>
+            </template>
+          </el-menu-item>
+        </el-tooltip>
       </app-link>
     </template>
 
-    <!-- 包含多个子路由  -->
+    <!-- 包含多个子路由 -->
     <el-sub-menu v-else :index="resolvePath(item.path)" teleported>
       <template #title>
         <Icon v-if="isIconify(item.meta)" :icon="item.meta.icon" class="svg-icon" />
         <svg-icon v-if="isSVGIcon(item.meta)" :icon-class="item.meta.icon" />
-        <span v-if="item.meta && item.meta.title">{{ translateRouteTitleI18n(item.meta.title) }}</span>
+        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="onlyOneChild.meta.title" placement="right" :offset="12" :enterable="true">
+          <span v-if="item.meta && item.meta.title" class="sle" @mouseenter="handleMouse($event)">{{ translateRouteTitleI18n(item.meta.title) }}</span>
+        </el-tooltip>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :item="child" :base-path="resolvePath(child.path)" />
     </el-sub-menu>
@@ -60,6 +64,26 @@ const onlyOneChild = ref() // 临时变量，唯一子路由
 
 const isIconify = (meta: any) => meta && meta.icon && meta.icon.includes(':')
 const isSVGIcon = (meta: any) => meta && meta.icon && !isIconify(meta)
+
+// 是否需要显示 tooltip
+const isBeyond = (e: any) => {
+  const ev = e || window.event
+  const textRange = (el: any) => {
+    const textContent = el
+    const targetW = textContent.getBoundingClientRect().width
+    const range = document.createRange()
+    range.setStart(textContent, 0)
+    range.setEnd(textContent, textContent.childNodes.length)
+    const rangeWidth = range.getBoundingClientRect().width
+    return rangeWidth > targetW
+  }
+  return !textRange(ev.target) // target可以保证当前划过的dom节点一直保持是:el-tooltip__trigger
+}
+
+let disabledTooltip = ref(true)
+const handleMouse = (e: any) => {
+  disabledTooltip.value = isBeyond(e)
+}
 
 /**
  * 判断当前路由是否只有一个子路由
@@ -119,5 +143,29 @@ function resolvePath(routePath: string) {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+.svg-icon {
+  margin-right: 6px !important;
+  flex-shrink: 0;
+}
+
+/* 文字单行省略号 */
+.sle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 文字过长多行显示 */
+.mlb {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: normal;
+  max-width: 130px;
+  line-height: 1.5;
 }
 </style>

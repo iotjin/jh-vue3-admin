@@ -34,9 +34,17 @@ export function editData(params: object): ResType<object> {
   })
 }
 
-export function getDataById(params: object): ResType<object> {
+export function saveData(data: object): ResType<object> {
   return request({
-    url: '/v1/api/table/' + params,
+    url: '/v1/api/user/save',
+    method: 'post',
+    data: data
+  })
+}
+
+export function getDataById(id: string): ResType<object> {
+  return request({
+    url: '/v1/api/table/' + id,
     method: 'get'
   })
 }
@@ -44,8 +52,9 @@ export function getDataById(params: object): ResType<object> {
 // 导出
 export function exportById(params: object) {
   return request({
-    url: '/v1/api/table/' + params,
+    url: '/v1/api/table/',
     method: 'get',
+    params: params,
     responseType: 'blob'
   })
 }
@@ -71,6 +80,7 @@ export function getDictDeptTree() {
 export interface TableType {
   id: string
   name: string
+  name1: string
   loginName: string
   userNumber: number
   deptId: string

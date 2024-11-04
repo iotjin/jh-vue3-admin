@@ -81,7 +81,7 @@ export function createListData(params: any, itemData: any) {
       itemData.title = 'title' + i
       itemData.text = '这是文字' + i
       var temp = Mock.mock(itemData)
-      temp.name1 += i
+      temp.name += i
       data.push(temp)
     }
 

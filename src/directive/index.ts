@@ -4,6 +4,7 @@ import { copyDirective } from './copy'
 import { debounceDirective } from './debounce'
 import { throttleDirective } from './throttle'
 import { wavesDirective, dragDirective } from '@/directive/customDirective'
+import { dragTableDirective } from './drag-table'
 
 /**
  * 自定义全局指令 directive：v-xxx
@@ -22,4 +23,6 @@ export function setupDirective(app: App<Element>) {
   wavesDirective(app)
   // 自定义拖动指令，用法：v-drag
   dragDirective(app)
+  // el-table拖拽排序指令，用法：v-drag-table
+  dragTableDirective(app)
 }

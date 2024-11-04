@@ -4,6 +4,15 @@ const level = [
   { id: '3', value: '3', label: '三级' }
 ]
 
+const status = [
+  { id: '1', value: 'status1', label: '状态1' },
+  { id: '2', value: 'status2', label: '状态2' },
+  { id: '3', value: 'status3', label: '状态3' },
+  { id: '4', value: 'status4', label: '状态4' },
+  { id: '5', value: 'status5', label: '状态5' },
+  { id: '6', value: 'status6', label: '状态6' }
+]
+
 const leader = [
   { id: '1', value: 'leader1', label: '负责人1' },
   { id: '2', value: 'leader2', label: '负责人2' },
@@ -87,6 +96,8 @@ export function createDictData(params: any, isMultiple = false) {
     const type = params.type
     if (type === 'level') {
       return level
+    } else if (type === 'status') {
+      return status
     } else if (type === 'leader') {
       return leader
     } else if (type === 'dept') {

@@ -46,7 +46,7 @@
     }
 
     .svg-icon {
-      margin-right: 16px;
+      margin-right: 6px;
     }
 
     .sub-el-icon {
@@ -120,13 +120,13 @@
     .el-menu--collapse {
       .el-sub-menu {
         & > .el-sub-menu__title {
-          & > span {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            overflow: hidden;
-            visibility: hidden;
-          }
+            & > span {
+              display: inline-block;
+              width: 0;
+              height: 0;
+              overflow: hidden;
+              visibility: hidden;
+            }
         }
       }
     }
@@ -168,7 +168,7 @@
 .el-menu--vertical {
   & > .el-menu {
     .svg-icon {
-      margin-right: 16px;
+      margin-right: 6px;
     }
 
     .sub-el-icon {
