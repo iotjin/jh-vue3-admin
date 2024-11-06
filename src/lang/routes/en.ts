@@ -15,7 +15,8 @@ export default {
     Home3: 'Home3',
     // table
     Table: 'Table',
-    Table1: 'Table1',
+    Table1: 'Table1 - Example',
+    Table2: 'Table2 - Dynamic Table',
     // components
     Component: 'Component',
     'Icon Selector': 'Icon Selector',
@@ -34,6 +35,7 @@ export default {
     Other1: 'Other1',
     Other2: 'Other2',
     Other3: 'Other3',
+    Other4: 'Other4',
     // nested
     Nested: 'Nested',
     Menu1: 'Menu1',

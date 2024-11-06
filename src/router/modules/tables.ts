@@ -17,13 +17,15 @@ const othersRouter: AppRouteType = {
       path: 'table1',
       name: 'table1',
       component: () => import('@/views/demos/tables/table1/index.vue'),
-      meta: { title: 'table1 - 综合示例', icon: 'ep:grid' }
+      // meta: { title: 'table1 - 综合示例', icon: 'ep:grid' }
+      meta: { title: 'Table1', icon: 'ep:grid' }
     },
     {
       path: 'table2',
       name: 'table2',
       component: () => import('@/views/demos/tables/table2/index.vue'),
-      meta: { title: 'table2 - 动态表格', icon: 'ep:grid' }
+      // meta: { title: 'table2 - 动态表格', icon: 'ep:grid' }
+      meta: { title: 'Table2', icon: 'ep:grid' }
     },
     {
       path: 'table3',

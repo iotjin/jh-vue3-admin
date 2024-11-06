@@ -3,7 +3,7 @@
     <!-- 只包含一个子路由节点的路由，显示其【唯一子路由】 -->
     <template v-if="hasOneShowingChild(item.children, item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren)">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="onlyOneChild.meta.title" placement="right" :offset="12" :enterable="true">
+        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="translateRouteTitleI18n(onlyOneChild.meta.title)" placement="right" :offset="12" :enterable="true">
           <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'menu-item-custom': isCollapse }">
             <Icon v-if="isIconify(onlyOneChild.meta)" :icon="onlyOneChild.meta.icon" class="svg-icon" />
             <svg-icon v-if="isSVGIcon(onlyOneChild.meta)" :icon-class="onlyOneChild.meta.icon" />
@@ -20,7 +20,7 @@
       <template #title>
         <Icon v-if="isIconify(item.meta)" :icon="item.meta.icon" class="svg-icon" />
         <svg-icon v-if="isSVGIcon(item.meta)" :icon-class="item.meta.icon" />
-        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="onlyOneChild.meta.title" placement="right" :offset="12" :enterable="true">
+        <el-tooltip effect="dark" :disabled="disabledTooltip" :content="translateRouteTitleI18n(onlyOneChild.meta.title)" placement="right" :offset="12" :enterable="true">
           <span v-if="item.meta && item.meta.title" class="sle" @mouseenter="handleMouse($event)">{{ translateRouteTitleI18n(item.meta.title) }}</span>
         </el-tooltip>
       </template>

@@ -30,6 +30,12 @@ const othersRouter: AppRouteType = {
       name: 'other3',
       component: () => import('@/views/demos/others/other3.vue'),
       meta: { title: 'Other3', icon: 'ep:grid', hidden: false }
+    },
+    {
+      path: 'other4',
+      name: 'other4',
+      component: () => import('@/views/demos/others/other4.vue'),
+      meta: { title: 'Other4', icon: 'ep:grid', hidden: false }
     }
   ]
 }

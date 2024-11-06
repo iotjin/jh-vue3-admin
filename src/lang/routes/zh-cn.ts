@@ -15,7 +15,8 @@ export default {
     Home3: '首页3',
     // table
     Table: '表格',
-    Table1: '表格1',
+    Table1: '表格1 - 综合示例',
+    Table2: '表格2 - 动态表格',
     // components
     Component: '组件',
     'Icon Selector': '图标选择器',
@@ -34,6 +35,7 @@ export default {
     Other1: '其它1',
     Other2: '其它2',
     Other3: '其它3',
+    Other4: '其它4',
     // nested
     Nested: '多级菜单',
     Menu1: '菜单1',
