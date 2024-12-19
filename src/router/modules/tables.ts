@@ -79,7 +79,13 @@ const othersRouter: AppRouteType = {
       path: 'table11',
       name: 'table11',
       component: () => import('@/views/demos/tables/table11.vue'),
-      meta: { title: 'table11', icon: 'ep:grid' }
+      meta: { title: 'table11 - 自定义滚动条', icon: 'ep:grid' }
+    },
+    {
+      path: 'table12',
+      name: 'table12',
+      component: () => import('@/views/demos/tables/table12.vue'),
+      meta: { title: 'table12', icon: 'ep:grid' }
     }
   ]
 }
