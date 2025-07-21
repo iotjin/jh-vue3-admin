@@ -2,7 +2,7 @@
 
 <template>
   <div class="app-container">
-    <editor v-model="value" style="height: calc(100vh - 180px)" />
+    <editor v-model="value" style="z-index: 99999; height: calc(100vh - 180px)" />
 
     <div style="margin-top: 20px">
       <textarea v-model="value" readonly style="width: 100%; height: 200px; outline: none" />

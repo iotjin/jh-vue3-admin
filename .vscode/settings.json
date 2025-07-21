@@ -112,5 +112,8 @@
   "liveServer.settings.port": 8080,
   "liveServer.settings.donotShowInfoMsg": true,
   "update.mode": "none",
+  "i18n-ally.localesPaths": [
+    "src/lang"
+  ],
    // --------------- 分割线 --------------- 
 }

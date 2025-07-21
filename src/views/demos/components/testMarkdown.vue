@@ -213,7 +213,7 @@ function onDialogOpen() {
 }
 
 onBeforeUnmount(() => {
-  state.editor.destroy()
+  state.editor?.destroy()
 })
 </script>
 
