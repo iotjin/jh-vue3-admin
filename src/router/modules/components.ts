@@ -39,6 +39,12 @@ const componentsRouter: AppRouteType = {
       meta: { title: 'Editor', icon: 'ep:edit' }
     },
     {
+      path: 'testMarkdown',
+      name: 'testMarkdown',
+      component: () => import('@/views/demos/components/testMarkdown.vue'),
+      meta: { title: 'Markdown', icon: 'ep:edit' }
+    },
+    {
       path: 'signature',
       name: 'signature',
       component: () => import('@/views/demos/components/signature.vue'),
