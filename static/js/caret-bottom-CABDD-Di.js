@@ -1,0 +1,1 @@
+import{ak as e,c as o,o as t,a as n}from"./@vue-KIsu0X2L.js";const a={viewBox:"0 0 1024 1024",width:"1.2em",height:"1.2em"},c=n("path",{fill:"currentColor",d:"m192 384l320 384l320-384z"},null,-1),s=[c];function r(_,l){return t(),o("svg",a,[...s])}const m=e({name:"ep-caret-bottom",render:r});export{m as _};
