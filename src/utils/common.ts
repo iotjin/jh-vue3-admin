@@ -32,3 +32,38 @@ export const getImgPath = (name: string): any => {
   // TODO: 下面这样写加载失败，也不可以用@/assets/xxx
   // return new URL('/src/assets/images/static/' + name, import.meta.url).href
 }
+
+/**
+ * @description: 防抖函数
+ * @param {Function} func 需要防抖处理的函数
+ * @param {number} wait 延迟时间，单位为毫秒
+ * @return {*}
+ */
+export function debounce(func: Function, wait: number) {
+  let timeout: ReturnType<typeof setTimeout>
+  return function (...args: any[]) {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
+  }
+}
+
+/**
+ * @description: 节流函数
+ * @param {Function} func 需要节流处理的函数
+ * @param {number} delay 延迟时间，单位为毫秒
+ * @return {*}
+ */
+export function throttle(func: Function, delay: number) {
+  let flag = true
+  return function (...args: any[]) {
+    if (!flag) {
+      // 如果未超过时间间隔，flag无效，不执行函数
+      return
+    }
+    func(...args)
+    flag = false // 在时间间隔内把状态位flag设为无效（false）
+    setTimeout(() => {
+      flag = true // 超过时间间隔把状态位flag设为有效（true）
+    }, delay)
+  }
+}

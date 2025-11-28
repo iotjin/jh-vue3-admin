@@ -13,6 +13,7 @@ export default {
     Home1: '首页1',
     Home2: '首页2',
     Home3: '首页3',
+    Home4: '首页4',
     // table
     Table: '表格',
     Table1: '表格1 - 综合示例',

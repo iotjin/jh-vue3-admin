@@ -14,6 +14,14 @@ declare type TableCellStyleType = {
   columnIndex: number
 }
 
+// ECharts 实例类型
+declare type iEChartsInstanceType = echarts.ECharts | null
+// ECharsts 图表组件数据类型
+declare type iEChartsOptionType = import('echarts').EChartsOption
+
+// 窗口resize处理函数类型
+declare type iResizeHandlerFnType = (() => void) | null
+
 declare module 'crypto-js'
 
 // __APP_INFO__
