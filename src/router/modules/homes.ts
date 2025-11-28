@@ -30,6 +30,12 @@ const homesRouter: AppRouteType = {
       name: 'home3',
       component: () => import('@/views/demos/homes/home3.vue'),
       meta: { title: 'Home3', icon: 'ep:grid', hidden: false }
+    },
+    {
+      path: 'home4',
+      name: 'home4',
+      component: () => import('@/views/demos/homes/home4.vue'),
+      meta: { title: 'Home4', icon: 'ep:grid', hidden: false }
     }
   ]
 }
