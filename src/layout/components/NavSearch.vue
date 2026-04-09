@@ -18,7 +18,9 @@
         <div class="item-center">
           <Icon v-if="isIconify(item.meta)" :icon="item.meta.icon" style="font-size: 20px" />
           <svg-icon v-if="isSVGIcon(item.meta)" :icon-class="item.meta.icon" />
-          <span class="search-item-title">{{ item.meta.title }}</span>
+          <span class="search-item-title">
+            <span v-for="(seg, i) in highlightTitle(item.meta.title)" :key="i" :class="{ 'search-match': seg.highlight }">{{ seg.text }}</span>
+          </span>
         </div>
         <svg-icon icon-class="confirm" />
         <!-- <Icon icon="ant-design:enter-outlined" height="20"  /> -->
@@ -69,6 +71,22 @@ const searchMenu = useDebounceFn(handleSearchMenu, 250)
 
 const isIconify = (meta: any) => meta && meta.icon && meta.icon.includes(':')
 const isSVGIcon = (meta: any) => meta && meta.icon && !isIconify(meta)
+
+/** 转义正则特殊字符，避免关键词里含 . * 等导致匹配异常 */
+function escapeRegExp(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+/** 把标题里与搜索框关键词相同的部分拆成片段，用于高亮（不区分大小写） */
+function highlightTitle(title: string) {
+  const kw = searchKey.value?.trim()
+  if (!kw) return [{ text: title, highlight: false }]
+  const parts = title
+    .split(new RegExp(`(${escapeRegExp(kw)})`, 'gi'))
+    .map((text, i) => ({ text, highlight: i % 2 === 1 }))
+    .filter((p) => p.text !== '')
+  return parts.length ? parts : [{ text: title, highlight: false }]
+}
 
 function handleSearchMenu(val: string) {
   const keyword = val?.trim().toLocaleLowerCase()
@@ -204,6 +222,12 @@ watch(searchKey, () => {
       .search-item-title {
         margin-left: 8px;
         font-size: 16px;
+        .search-match {
+          color: var(--el-color-danger);
+        }
+      }
+      &.active .search-item-title .search-match {
+        color: #ffc9c9;
       }
     }
   }
