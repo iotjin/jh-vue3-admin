@@ -11,9 +11,7 @@
     <div class="flex">
       <!-- 导航栏设置(窄屏隐藏)-->
       <div v-if="device !== 'mobile'" class="setting-container">
-        <div class="setting-item item-center">
-          <NavSearch />
-        </div>
+        <NavSearch class="setting-item item-center" />
 
         <!--全屏 -->
         <el-tooltip :content="$t(isFullscreen ? 'navbar.exitFull' : 'navbar.entryFull')" effect="dark" placement="bottom">

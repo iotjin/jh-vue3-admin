@@ -1,52 +1,62 @@
 <template>
-  <el-tooltip placement="bottom" :content="$t('navbar.search')">
-    <div @click="showDialog = true" class="item-center">
-      <i-ep-search />
-      <!-- <svg-icon icon-class="search" /> -->
-      <!-- <Icon icon="ep:search" height="20" /> -->
-    </div>
-  </el-tooltip>
-  <el-dialog v-model="showDialog" top="10vh" title="" class="search-dialog" min-height="200px" width="750px" :show-close="false" closeOnPressEscape @closed="reset">
-    <el-input v-model="searchKey" :placeholder="$t('navbar.searchPlaceholder')" size="large" clearable>
-      <template #prefix>
+  <div @click="showDialog = true">
+    <el-tooltip placement="bottom" :content="$t('navbar.search')">
+      <div class="item-center">
         <i-ep-search />
-      </template>
-    </el-input>
+        <!-- <svg-icon icon-class="search" /> -->
+        <!-- <Icon icon="ep:search" height="20" /> -->
+      </div>
+    </el-tooltip>
+    <el-dialog v-model="showDialog" top="10vh" title="" class="search-dialog" width="750px" :show-close="false" closeOnPressEscape @opened="focusSearchInput" @closed="reset">
+      <el-input ref="searchInputRef" v-model="searchKey" :placeholder="$t('navbar.searchPlaceholder')" size="large" clearable>
+        <template #prefix>
+          <i-ep-search />
+        </template>
+      </el-input>
 
-    <div class="search-list" v-if="searchList.length > 0">
-      <div class="search-item item-center" :class="{ active: index === activeIndex }" v-for="(item, index) in searchList" :key="item.name" @click="handleRedirect" @mouseenter="handleMouseenter(index)">
-        <div class="item-center">
-          <Icon v-if="isIconify(item.meta)" :icon="item.meta.icon" style="font-size: 20px" />
-          <svg-icon v-if="isSVGIcon(item.meta)" :icon-class="item.meta.icon" />
-          <span class="search-item-title">
-            <span v-for="(seg, i) in highlightTitle(item.meta.title)" :key="i" :class="{ 'search-match': seg.highlight }">{{ seg.text }}</span>
-          </span>
+      <div v-if="searchList.length > 0" class="search-list">
+        <div
+          v-for="(item, index) in searchList"
+          :key="'nav-search-' + index"
+          ref="searchItemRef"
+          class="search-item item-center"
+          :class="{ active: index === activeIndex }"
+          @click="handleRedirect"
+          @mouseenter="handleMouseenter(index)"
+        >
+          <div class="item-center">
+            <Icon v-if="isIconify(item.meta)" :icon="item.meta.icon" style="font-size: 20px" />
+            <svg-icon v-if="isSVGIcon(item.meta)" :icon-class="item.meta.icon" />
+            <span class="search-item-title">
+              <span v-for="(seg, i) in highlightTitle(item.meta.title)" :key="i" :class="{ 'search-match': seg.highlight }">{{ seg.text }}</span>
+            </span>
+          </div>
+          <svg-icon icon-class="confirm" />
+          <!-- <Icon icon="ant-design:enter-outlined" height="20"  /> -->
         </div>
-        <svg-icon icon-class="confirm" />
-        <!-- <Icon icon="ant-design:enter-outlined" height="20"  /> -->
       </div>
-    </div>
-    <el-empty :description="$t('navbar.searchEmpty')" :image-size="64" v-else />
-    <template #footer>
-      <div class="footer">
-        <el-space :size="10">
-          <div class="item-center">
-            <svg-icon icon-class="confirm" class="icon" />
-            <span>{{ $t('navbar.searchConfirm') }}</span>
-          </div>
-          <div class="item-center">
-            <svg-icon icon-class="up" class="icon" />
-            <svg-icon icon-class="down" class="icon" />
-            <span>{{ $t('navbar.searchSwitch') }}</span>
-          </div>
-          <div class="item-center">
-            <svg-icon icon-class="esc" class="icon" />
-            <span>{{ $t('navbar.searchClose') }}</span>
-          </div>
-        </el-space>
-      </div>
-    </template>
-  </el-dialog>
+      <el-empty v-else :description="$t('navbar.searchEmpty')" :image-size="64" />
+      <template #footer>
+        <div class="footer">
+          <el-space :size="10">
+            <div class="item-center">
+              <svg-icon icon-class="confirm" class="icon" />
+              <span>{{ $t('navbar.searchConfirm') }}</span>
+            </div>
+            <div class="item-center">
+              <svg-icon icon-class="up" class="icon" />
+              <svg-icon icon-class="down" class="icon" />
+              <span>{{ $t('navbar.searchSwitch') }}</span>
+            </div>
+            <div class="item-center">
+              <svg-icon icon-class="esc" class="icon" />
+              <span>{{ $t('navbar.searchClose') }}</span>
+            </div>
+          </el-space>
+        </div>
+      </template>
+    </el-dialog>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -64,6 +74,8 @@ const searchKey = ref('')
 const activeIndex = ref(-1)
 
 const searchList = ref<any[]>([])
+const searchInputRef = ref<{ focus: () => void } | null>(null)
+const searchItemRef = ref<HTMLElement | HTMLElement[] | null>(null)
 
 const router = useRouter()
 
@@ -157,11 +169,50 @@ function reset() {
   searchList.value = []
 }
 
-onKeyStroke('Enter', handleRedirect)
+function focusSearchInput() {
+  nextTick(() => {
+    const inst = searchInputRef.value
+    if (inst && typeof inst.focus === 'function') {
+      inst.focus()
+    }
+  })
+}
 
-onKeyStroke('ArrowUp', handleUp)
+/** 键盘/高亮切换时让当前项在列表滚动区内可见 */
+function scrollActiveIntoView() {
+  if (activeIndex.value < 0 || !searchList.value.length) {
+    return
+  }
+  const items = searchItemRef.value
+  const el = Array.isArray(items) ? items[activeIndex.value] : items
+  if (!el || typeof el.scrollIntoView !== 'function') {
+    return
+  }
+  el.scrollIntoView({ block: 'nearest', behavior: 'auto', inline: 'nearest' })
+}
 
-onKeyStroke('ArrowDown', handleDown)
+watch(activeIndex, () => {
+  nextTick(() => scrollActiveIntoView())
+})
+
+function onDialogKeydown(e: KeyboardEvent) {
+  if (!showDialog.value) {
+    return
+  }
+  const navigatingList = (e.key === 'ArrowUp' || e.key === 'ArrowDown') && searchList.value.length > 0
+  if (navigatingList) {
+    e.preventDefault()
+  }
+  if (e.key === 'Enter') {
+    handleRedirect()
+  } else if (e.key === 'ArrowUp') {
+    handleUp()
+  } else if (e.key === 'ArrowDown') {
+    handleDown()
+  }
+}
+
+onKeyStroke(['Enter', 'ArrowUp', 'ArrowDown'], onDialogKeydown)
 
 watch(searchKey, () => {
   searchMenu(searchKey.value)
@@ -202,6 +253,10 @@ watch(searchKey, () => {
 
   .search-list {
     margin-top: 15px;
+    max-height: min(50vh, 480px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 4px;
 
     .search-item {
       height: 54px;
